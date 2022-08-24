@@ -1,8 +1,8 @@
 # Geoinformática aplicada a la cartografía multitemática
 
-Clases virtuales del curso brindado por la [Asociación Geológica Argentina](https://geologica.org.ar/) (AGA) en septiembre a diciembre de 2021.
+Clases del curso brindado por el [Departamento de Geología de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires](http://www.gl.fcen.uba.ar/) (AGA) en octubre a noviembre de 2022.
 
-Dictado por Federico D. Esteban, Jorge Lozano y José Isola.
+Dictado por Federico D. Esteban.
 
 Los profesores son integrantes del grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) el cual es parte del [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires](http://igeba.gl.fcen.uba.ar/) (IGEBA). Éste es un instituto de doble dependencia entre la Universidad de Buenos Aires y el [CONICET](https://www.conicet.gov.ar/).
 

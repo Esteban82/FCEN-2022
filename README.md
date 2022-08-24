@@ -16,7 +16,7 @@ Dictado por Federico D. Esteban del grupo de [Prospección Geológica y Geofísi
 
 ## Instalación
 
-Para el curso es necesario la instalación de algunos programas. Por favor siga los [siguientes pasos](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Instalacion.MD).
+Para el curso es necesario la instalación de algunos *softwares*. Por favor siga los [siguientes pasos](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Instalacion.MD).
 
 ## Programa
 
@@ -25,12 +25,8 @@ Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Progr
 
 ## Comunicación durante el curso
 
-Usaremos un grupo de trabajo en el Slack. El chat de Zoom estará desactivado.
+Usaremos un grupo de trabajo en Slack.
 
 ## Referencias
 
 Parte de este tutorial fue adaptado de https://github.com/GenericMappingTools/2021-unavco-course, el cual esta bajo licencia de Creative Commons Attribution 4.0 license.
-
-
-
-

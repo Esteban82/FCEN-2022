@@ -1,6 +1,6 @@
 # Geoinformática aplicada a la cartografía multitemática
 
-Clases del curso brindado por el [Departamento de Geología de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires](http://www.gl.fcen.uba.ar/) (AGA) en octubre a noviembre de 2022.
+Clases del curso brindado por el [Departamento de Geología de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires](http://www.gl.fcen.uba.ar/) (FCEN-UBA) en octubre a noviembre de 2022.
 
 Dictado por Federico D. Esteban.
 

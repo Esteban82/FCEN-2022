@@ -16,11 +16,11 @@ Dictado por Federico D. Esteban del grupo de [Prospección Geológica y Geofísi
 
 ## Instalación
 
-Para el curso es necesario la instalación de algunos *softwares*. Por favor siga los [siguientes pasos](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Instalacion.MD).
+Para el curso es necesario la instalación de algunos *softwares*. Por favor siga los [siguientes pasos](https://github.com/Esteban82/FCEN-2022/blob/main/Instalacion.MD).
 
 ## Programa Analítico
 
-Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
+Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
 
 
 ## Comunicación durante el curso

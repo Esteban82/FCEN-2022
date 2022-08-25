@@ -1,25 +1,25 @@
-# Instalación del software necesario
+# Instalación del *software* necesario
 
-Por favor, sigue estas instrucciones para instalar GMT 6.2 y el resto del software que se utilizará. Aquí tienes un resumen de lo que necesitarás:
+Por favor, sigue estas instrucciones para instalar GMT 6.4 y el resto de los *softwares* que se utilizarán. Aquí tienes un resumen de lo que necesitarás:
 
  La instalación depende del sistema operativo que uses:
 
-* [Windows](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Instalacion.MD#windows)
-* [Linux](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Instalacion.MD#linux)
-* [macOS](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Instalacion.MD#macos)
+* [Windows](https://github.com/Esteban82/FCEN-2022/blob/main/Instalacion.MD#windows)
+* [Linux](https://github.com/Esteban82/FCEN-2022/blob/main/Instalacion.MD#linux)
+* [macOS](https://github.com/Esteban82/FCEN-2022/blob/main/Instalacion.MD#macos)
 
 
 ## Windows
 
 Necesitarás tres programas (fundamentales):
 
-* Git-for-Windows: versión Git-2.33.0.2-64-bit.exe en su [sitio web oficial](https://gitforwindows.org/). Programa para poder ejecutar los script bash en Windows.
+* Git-for-Windows: versión Git-2.37.2.2-64-bit.exe (o la última disponible) en su [sitio web oficial](https://gitforwindows.org/). Este *software*p permite ejecutar los *scripts* de bash en Windows.
 
-* GMT para Windows: version gmt-6.2.0-win64.exe en https://www.generic-mapping-tools.org/download/. Incluye los programas GDAL, ghostscript y ffmpeg. 
+* GMT para Windows: version gmt-6.4.0-win64.exe en https://www.generic-mapping-tools.org/download/. Incluye los *softwares* GDAL, ghostscript y ffmpeg. 
 
 * Editor de texto: ver instrucciones mas abajo.
 
-En [este video](https://www.youtube.com/watch?v=1bPMIN7noTI&feature=youtu.be) se muestra como instalarlos y comprobar su correcta configuración. 
+En [este video](https://www.youtube.com/watch?v=1bPMIN7noTI&feature=youtu.be) se muestra como instalarlos y comprobar su correcto funcionamiento. 
 
 
 ## Linux y macOS

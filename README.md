@@ -2,7 +2,7 @@
 
 Clases del curso brindado por el [Departamento de Geología de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires](http://www.gl.fcen.uba.ar/) (FCEN-UBA) en octubre a noviembre de 2022.
 
-Dictado por Federico D. Esteban del grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) el cual es parte del [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires](http://igeba.gl.fcen.uba.ar/) (IGEBA). Éste es un instituto de doble dependencia entre la Universidad de Buenos Aires y el [CONICET](https://www.conicet.gov.ar/).
+Docente: Federico D. Esteban del grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) el cual es parte del [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires](http://igeba.gl.fcen.uba.ar/) (IGEBA, Universidad de Buenos Aires-[CONICET](https://www.conicet.gov.ar/).
 
 
 ## Calendario de Actividades

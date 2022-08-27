@@ -3,7 +3,7 @@
 Por Federico D. Esteban<sup>1, 2</sup>
 > <sup>1</sup> Universidad de Buenos Aires (UBA), Facultad de Ciencias Exactas y Naturales, Depto. de Ciencias Geológicas, Buenos Aires, Argentina.
 > <br>
-> <sup>2</sup> CONICET - UBA. Grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) del  [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires (IGEBA)](http://igeba.gl.fcen.uba.ar/)Instituto de Geociencias Básicas, Aplicadas y Ambientales de Buenos Aires (IGeBA), Buenos Aires, Argentina.
+> <sup>2</sup> CONICET - UBA. Grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) del  [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires (IGEBA)](http://igeba.gl.fcen.uba.ar/), Buenos Aires, Argentina.
 
 Clases del curso brindado por el [Departamento de Geología de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires](http://www.gl.fcen.uba.ar/) (FCEN-UBA) en octubre a noviembre de 2022.
 

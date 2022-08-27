@@ -12,7 +12,7 @@ Afiliacion: Grupo de [Prospección Geológica y Geofísica Lacustre y Marina](ht
 
 • Horario de clases: Martes y Jueves de 14 a 18 hs. 
 
-• Lugar: [Departamento de Ciencias Geológicas]([url]([http://www.gl.fcen.uba.ar/))]. Pabellón II, Ciudad Universitaria, Buenos Aires. Google maps [link](https://goo.gl/maps/hWZKoahv8Bz7nfDu9).
+• Lugar: [Departamento de Ciencias Geológicas]([url]([http://www.gl.fcen.uba.ar/)). Pabellón II, Ciudad Universitaria, Buenos Aires. Google maps [link](https://goo.gl/maps/hWZKoahv8Bz7nfDu9).
 
 • Fecha de realización: 11 de octubre al 17 de noviembre de 2022.
 

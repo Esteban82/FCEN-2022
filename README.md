@@ -20,6 +20,13 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 • Modalidad: Presencial.
 
+## Destinatarios
+El curso esta destinado a alumnos/as avanzados/as de posgrado, profesores/as y profesionales de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
+
+
+## Conocimientos previos
+Para el curso no se requieren conocimientos previos de informática.
+
 
 ## Programa Analítico
 

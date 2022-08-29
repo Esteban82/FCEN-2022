@@ -28,7 +28,10 @@ Clases del curso brindado por el [Departamento de Geología de la Facultad de Ci
 Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
 
 ## Inscripción
-
+Informes: Secretaría de Posgrado , Pabellón II, Planta Baja, Aula 16 (Horario: 9-13 y 14 a 17.00 hs) Tel: 5285-8060/61/56.
+Informes y Pre-Inscripción: Depto. Geología, FCEN - UBA, Ciudad Universitaria. Pab. 2, Tel: (54-11) 5285-8248/49.
+e-Mail Secretaria Geologia: <geologia @ gl.fcen.uba.ar>
+Por consultas: email a: esteban @ gl.fcen.uba.ar
 
 ## Referencias
 

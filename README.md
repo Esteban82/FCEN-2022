@@ -16,7 +16,7 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 • Carga horaria total: 48 horas.
 
-• Lugar: [Departamento de Ciencias Geológicas de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires (FCEN-UBA)([http://www.gl.fcen.uba.ar/]). Pabellón II, Ciudad Universitaria, Buenos Aires. Google maps [link](https://goo.gl/maps/hWZKoahv8Bz7nfDu9).
+• Lugar: [Departamento de Ciencias Geológicas de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires (FCEN-UBA)](http://www.gl.fcen.uba.ar/). Pabellón II, Ciudad Universitaria, Buenos Aires. Google maps [link](https://goo.gl/maps/hWZKoahv8Bz7nfDu9).
 
 • Modalidad: Presencial.
 

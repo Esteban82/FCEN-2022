@@ -5,8 +5,6 @@ Por Federico D. Esteban<sup>1, 2</sup>
 > <br>
 > <sup>2</sup> CONICET - UBA. Grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) del  [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires (IGEBA)](http://igeba.gl.fcen.uba.ar/), Buenos Aires, Argentina.
 
-Clases del curso brindado por el [Departamento de Geología de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires](http://www.gl.fcen.uba.ar/) (FCEN-UBA) en octubre a noviembre de 2022.
-
 
 ## Información del Curso
 
@@ -18,7 +16,7 @@ Clases del curso brindado por el [Departamento de Geología de la Facultad de Ci
 
 • Carga horaria total: 48 horas.
 
-• Lugar: [Departamento de Ciencias Geológicas]([url]([http://www.gl.fcen.uba.ar/)). Pabellón II, Ciudad Universitaria, Buenos Aires. Google maps [link](https://goo.gl/maps/hWZKoahv8Bz7nfDu9).
+• Lugar: [Departamento de Ciencias Geológicas de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires]([url]([http://www.gl.fcen.uba.ar/)). Pabellón II, Ciudad Universitaria, Buenos Aires. Google maps [link](https://goo.gl/maps/hWZKoahv8Bz7nfDu9).
 
 • Modalidad: Presencial.
 

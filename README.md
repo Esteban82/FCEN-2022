@@ -30,7 +30,7 @@ Para el curso no se requieren conocimientos previos de informática.
 
 ## Programa Analítico
 
-Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
+Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para detalles del programa, objetivos, bibliografía.
 
 ## Inscripción
 

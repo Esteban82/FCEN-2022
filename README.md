@@ -29,13 +29,6 @@ Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para d
 
 ## Inscripción
 
-## Comunicación durante el curso
-
-Usaremos un grupo de trabajo en Slack.
-
-## Instalación
-
-Para el curso es necesario la instalación de algunos *softwares*. Por favor siga los [siguientes pasos](https://github.com/Esteban82/FCEN-2022/blob/main/Instalacion.MD).
 
 ## Referencias
 

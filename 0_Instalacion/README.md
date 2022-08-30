@@ -23,15 +23,15 @@ que obtiene el mapa y la animación correctos.
 3. Corra este comando para descargar el material del curso usando [git](https://en.wikipedia.org/wiki/Git):
 
    ```
-   git clone https://github.com/Esteban82/AGA-Geoinformatica-2021.git
+   git clone https://github.com/Esteban82/FCEN-2022.git
    ```
 
-   Esto creará una carpeta llamada `AGA-Geoinformatica-2021` en su computadora.
+   Esto creará una carpeta llamada `FCEN-2022` en su computadora.
 
 4. Corra el siguiente comando para ingresar a la carpeta con los scripts:
 
    ```
-   cd AGA-Geoinformatica-2021/0_Instalacion
+   cd FCEN-2022/0_Instalacion
    
    ```
 
@@ -43,7 +43,7 @@ que obtiene el mapa y la animación correctos.
 
    Al finalilzar, una ventana con el siguiente mapa de sudamérica debería abrirse (en Mac puede verse mas suave):
 
-   ![`AGA-Geoinformatica-2021/0_Instalacion/salida/prueba1.png`](salida/prueba1.png)
+   ![`FCEN-2022/0_Instalacion/salida/prueba1.png`](salida/prueba1.png)
 
 6. Ejecute el script [`prueba_2.sh`](prueba_2.sh):
 
@@ -60,7 +60,7 @@ que obtiene el mapa y la animación correctos.
 
    El resultado es una animación con números contando de 0 a 24 que luce como:
 
-   ![`AGA-Geoinformatica-2021/0_Instalacion/salida/contar.mp4`](salida/contar.gif)
+   ![`FCEN-2022/0_Instalacion/salida/contar.mp4`](salida/contar.gif)
 
 7. Si tuvo algún problema para obtener los archivos, por favor avisenos a traves de slack.
 

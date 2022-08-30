@@ -32,7 +32,6 @@ que obtiene el mapa y la animación correctos.
 
    ```
    cd FCEN-2022/0_Instalacion
-   
    ```
 
 5. Ejecute el script [`prueba_1.sh`](prueba_1.sh):

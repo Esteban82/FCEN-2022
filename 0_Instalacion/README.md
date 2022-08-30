@@ -70,7 +70,7 @@ El material del curso (todo lo includio en este repositorio) se actualizará con
 Para actualizarlo en tu pc sigue los siguientes pasos:
 
 
-1. Ve a la carperta `AGA-Geoinformatica-2021` previamente descargada en su computadora.
+1. Ve a la carperta `FCEN-2022` previamente descargada en su computadora.
 
 2. Abre una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
    Los siguientes pasos deben hacerse en la terminal.

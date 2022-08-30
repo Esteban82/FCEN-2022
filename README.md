@@ -34,15 +34,14 @@ Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para d
 
 ## Inscripción
 
-Ver información, requisitos y aranceles en https://exactas.uba.ar/ensenanza/cursos-de-posgrado/
+Ver información, requisitos y aranceles para inscripción formal en
+https://exactas.uba.ar/ensenanza/cursos-de-posgrado/
 
-Informes: Secretaría de Posgrado , Pabellón 2, Planta Baja, Aula 16 (Horario: 9-13 y 14 a 17.00 hs) Tel: 5285-8060/61/56.
+Informes por aranceles: Secretaría de Posgrado , Pabellón 2, Planta
+Baja, Horario: 9-13 y 14 a 19.00 hs. Tel: 5285-8060/61/56.
 
-Informes y Pre-Inscripción: Depto. Geología, FCEN - UBA, Ciudad Universitaria. Pabellón 2, Tel: (54-11) 5285-8248/49.
-
-e-Mail Secretaria Geologia: <geologia@gl.fcen.uba.ar>
-
-Por consultas: email a: federico.esteban@gmail.com
+Informes y Pre-Inscripción, consultas por email al profesor:
+federico.esteban@gmail.com
 
 ## Referencias
 

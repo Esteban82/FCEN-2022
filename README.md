@@ -20,6 +20,8 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 • Modalidad: **Presencial**.
 
+• Softwares: Se utilizarán softwares gratuitos. El principal es el [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
+
 ## Dirigido a: 
 El curso esta destinado a alumnos/as de postgrado, profesores/as y profesionales de geología, geofísica y disciplinas afines.
 

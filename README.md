@@ -24,7 +24,7 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 # Importante:
 
-En el curso se trabajará con computadoras. Es muy recomendable que cada uno pueda asistir con una notebook para trabajar.
+En el curso se trabajará con computadoras. Es **muy recomendable** que cada uno pueda asistir con una *notebook* para trabajar.
 
 ## Dirigido a:
 El curso esta destinado a alumnos/as de postgrado, profesores/as y profesionales de geología, geofísica y disciplinas afines.

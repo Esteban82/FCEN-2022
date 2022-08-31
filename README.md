@@ -21,8 +21,7 @@ Por Federico D. Esteban<sup>1, 2</sup>
 • Modalidad: **Presencial**.
 
 ## Dirigido a: 
-El curso esta destinado a graduados/as, alumnos/as avanazados de grado, profesores/as y profesionales de geología, geofísica y disciplinas afines dentro de las Ciencias de la Tierra.
-
+El curso esta destinado a alumnos/as de postgrado, profesores/as y profesionales de geología, geofísica y disciplinas afines.
 
 ## Conocimientos previos
 Para el curso no se requieren conocimientos previos de informática.

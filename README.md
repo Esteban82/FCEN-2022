@@ -22,7 +22,11 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 • Softwares: Se utilizarán softwares gratuitos. El principal es el [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
 
-## Dirigido a: 
+# Importante:
+
+En el curso se trabajará con computadoras. Es muy recomendable que cada uno pueda asistir con una notebook para trabajar.
+
+## Dirigido a:
 El curso esta destinado a alumnos/as de postgrado, profesores/as y profesionales de geología, geofísica y disciplinas afines.
 
 ## Conocimientos previos

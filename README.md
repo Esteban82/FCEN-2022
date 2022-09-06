@@ -43,7 +43,7 @@ Ver información, requisitos y aranceles para inscripción formal en
 https://exactas.uba.ar/ensenanza/cursos-de-posgrado/
 
 Informes por aranceles: Secretaría de Posgrado , Pabellón 2, Planta
-Baja, Horario: 9-13 y 14 a 19.00 hs. Tel: 5285-8060/61/56.
+Baja, Horario: 10 a 13 y 14 a 16 hs. Tel: 5285-8060/61/56.
 
 Informes y Pre-Inscripción, consultas por email al profesor:
 federico.esteban@gmail.com

@@ -20,7 +20,10 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 • Modalidad: **Presencial**.
 
-• Softwares: Se utilizarán softwares gratuitos. El principal es el [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
+* Puntaje máximo para la Carrera de Doctorado: tres (3) puntos.
+Doctorado.
+
+• Softwares: Se utilizarán *softwares* gratuitos y de código abierto. El principal es el [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
 
 # Importante:
 
@@ -32,7 +35,6 @@ El curso esta destinado a alumnos/as de postgrado, profesores/as y profesionales
 ## Conocimientos previos
 Para el curso **no** se requieren conocimientos previos de informática.
 
-
 ## Programa Analítico
 
 Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para detalles del programa, objetivos, bibliografía.
@@ -42,6 +44,18 @@ Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para d
 TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@gmail.com).
 
 ## Inscripción
+
+* Se realizará a través del [SIU Guarani](https://inscripciones.exactas.uba.ar/exactas/).
+
+* Fechas de Inscripción: 26-09 al 02-10.
+
+* Arancel: del curso: 24000 $.
+
+### Estudiantes de Doctorado de FCEN:
+
+* Los estudiantes regulares de la Carrera de Doctorado de la FCEN se inscribirán directamente.
+
+### Estudiantes externos a la FCEN:
 
 Ver información, requisitos y aranceles para inscripción formal en
 https://exactas.uba.ar/ensenanza/cursos-de-posgrado/

@@ -30,23 +30,25 @@ En el curso se trabajará con computadoras. Es **muy recomendable** que cada uno
 El curso esta destinado a alumnos/as de postgrado, profesores/as y profesionales de geología, geofísica y disciplinas afines.
 
 ## Conocimientos previos
-Para el curso no se requieren conocimientos previos de informática.
+Para el curso **no** se requieren conocimientos previos de informática.
 
 
 ## Programa Analítico
 
 Ver [aquí](https://github.com/Esteban82/FCEN-2022/blob/main/Programa.md) para detalles del programa, objetivos, bibliografía.
 
+## Pre-inscripción y consultas
+
+TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@gmail.com).
+
 ## Inscripción
 
 Ver información, requisitos y aranceles para inscripción formal en
 https://exactas.uba.ar/ensenanza/cursos-de-posgrado/
 
-Informes por aranceles: Secretaría de Posgrado , Pabellón 2, Planta
+Informes por aranceles: Secretaría de Posgrado, Pabellón 2, Planta
 Baja, Horario: 10 a 13 y 14 a 16 hs. Tel: 5285-8060/61/56.
 
-Informes y Pre-Inscripción, consultas por email al profesor:
-federico.esteban@gmail.com
 
 ## Referencias
 

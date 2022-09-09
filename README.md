@@ -20,8 +20,7 @@ Por Federico D. Esteban<sup>1, 2</sup>
 
 • Modalidad: **Presencial**.
 
-* Puntaje máximo para la Carrera de Doctorado: tres (3) puntos.
-Doctorado.
+• Puntaje máximo para la Carrera de Doctorado: tres (3) puntos.
 
 • Softwares: Se utilizarán *softwares* gratuitos y de código abierto. El principal es el [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
 
@@ -55,7 +54,7 @@ TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@g
 
 ### Estudiantes externos a la FCEN:
 
-1. Contactar al docente a cargo para definir el arancel a pagar (https://github.com/Esteban82/FCEN-2022/edit/WIP-Inscripcion/README.md#Arancel).
+1. Contactar al docente a cargo para definir el [arancel a pagar](https://github.com/Esteban82/FCEN-2022/edit/WIP-Inscripcion/README.md##Arancel).
 2. Realizar el pago.
 3. Enviar la siguiente documentación al docente responsable. Él será el encargado de gestionar ante la Secretaría de Posgrado la habilitación correspondiente para su inscripción en [SIU Guarani](https://inscripciones.exactas.uba.ar/exactas/):
 

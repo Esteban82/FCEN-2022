@@ -69,41 +69,41 @@ TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@g
 
 **Serán eximidos de abonar el arancel:**
 
-• Los inscriptos al Doctorado de esta Facultad, por el término de un año.
+* Los inscriptos al Doctorado de esta Facultad, por el término de un año.
 
-• Los alumnos regulares del Doctorado de esta Facultad mientras no hayan obtenido los créditos
+* Los alumnos regulares del Doctorado de esta Facultad mientras no hayan obtenido los créditos
 necesarios para obtener el título correspondiente.
 
-• Los Docentes con dedicación exclusiva de esta Casa de Estudios.
+* Los Docentes con dedicación exclusiva de esta Casa de Estudios.
 
-• Los Docentes de esta Facultad que realicen tareas de investigación con dedicación exclusiva en
+* Los Docentes de esta Facultad que realicen tareas de investigación con dedicación exclusiva en
 la misma, y que sean becarios o miembros de Instituciones Científicas Reconocidas.
 
-• Los miembros de Instituciones con las cuales haya convenio de reciprocidad en la exención de
+* Los miembros de Instituciones con las cuales haya convenio de reciprocidad en la exención de
 aranceles.
 
-• Becarios e investigadores de CONICET y de la Agencia Nacional de Promoción Científica y
+* Becarios e investigadores de CONICET y de la Agencia Nacional de Promoción Científica y
 Tecnológica con lugar de trabajo en esta Facultad.
 
-• Becarios CELFI. 
+* Becarios CELFI. 
 
 
 **Abonarán el 50% del arancel solicitado:**
 
-• Alumnos de grado de la FCEN, doctorandos de la FCEN con el plan de estudios completo y
+* Alumnos de grado de la FCEN, doctorandos de la FCEN con el plan de estudios completo y
 aprobado, y graduados de la FCEN.
 
 **Abonarán el 80% del arancel solicitado:**
 
-• Personas que se desempeñen en Universidades Nacionales u otros organismos públicos.
+* Personas que se desempeñen en Universidades Nacionales u otros organismos públicos.
 
 **Abonarán el 100%:**
 
-• Cualquier otro caso no contemplado en los puntos anteriores.
+* Cualquier otro caso no contemplado en los puntos anteriores.
 
 ### Mas información: 
-Secretaría de Posgrado, Pabellón 2, Planta
-Baja, Horario: 10 a 13 y 14 a 16 hs. Tel: 5285-8060/61/56.
+
+Secretaría de Posgrado, Pabellón 2, Planta Baja, Horario: 10 a 13 y 14 a 16 hs. Tel: 5285-8060/61/56.
 
 https://exactas.uba.ar/ensenanza/cursos-de-posgrado/
 

@@ -3,7 +3,7 @@
 Por Federico D. Esteban<sup>1, 2</sup>
 > <sup>1</sup> Universidad de Buenos Aires (UBA), Facultad de Ciencias Exactas y Naturales, Depto. de Ciencias Geológicas, Buenos Aires, Argentina.
 > <br>
-> <sup>2</sup> CONICET - UBA. Grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) del  [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires (IGEBA)](http://igeba.gl.fcen.uba.ar/), Buenos Aires, Argentina.
+> <sup>2</sup> CONICET - UBA. Grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) del [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires (IGEBA)](http://igeba.gl.fcen.uba.ar/), Buenos Aires, Argentina.
 
 
 ## Información del Curso
@@ -59,7 +59,7 @@ TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@g
 
   * Fotocopia de título universitario 
   * Fotocopia de DNI (anverso y reverso) o Pasaporte
-  * [Formulario de Inscripción a Curso de Posgrado]([url](https://exactas.uba.ar/wp-content/uploads/2019/07/Formulario-de-Inscripci%C3%B3n-a-Curso-Materia-de-Posgrado-1.pdf))
+  * [Formulario de Inscripción a Curso de Posgrado](https://exactas.uba.ar/wp-content/uploads/2019/07/Formulario-de-Inscripci%C3%B3n-a-Curso-Materia-de-Posgrado-1.pdf)
   * Documentación respaldatoria respecto a la normativa de aranceles (recibo de sueldo o beca, resolución de designación o equivalente, etc)
   * Comprobante de pago del arancel si corresponde.
 

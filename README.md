@@ -93,7 +93,7 @@ aprobado, y graduados de la FCEyN.
 ### Abonarán el 100%:
 • Cualquier otro caso no contemplado en los puntos anteriores.
 
-## Mas información: 
+### Mas información: 
 Secretaría de Posgrado, Pabellón 2, Planta
 Baja, Horario: 10 a 13 y 14 a 16 hs. Tel: 5285-8060/61/56.
 

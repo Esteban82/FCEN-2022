@@ -84,8 +84,8 @@ Tecnológica con lugar de trabajo en esta Facultad.
 
 ### Abonarán el 50% del arancel solicitado:
 
-• Alumnos de grado de la FCEyN, doctorandos de la FCEyN con el plan de estudios completo y
-aprobado, y graduados de la FCEyN.
+• Alumnos de grado de la FCEN, doctorandos de la FCEN con el plan de estudios completo y
+aprobado, y graduados de la FCEN.
 
 ### Abonarán el 80% del arancel solicitado:
 • Personas que se desempeñen en Universidades Nacionales u otros organismos públicos.

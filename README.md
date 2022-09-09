@@ -64,15 +64,21 @@ TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@g
 ### Serán eximidos de abonar el arancel:
 
 • Los inscriptos al Doctorado de esta Facultad, por el término de un año.
+
 • Los alumnos regulares del Doctorado de esta Facultad mientras no hayan obtenido los créditos
 necesarios para obtener el título correspondiente.
+
 • Los Docentes con dedicación exclusiva de esta Casa de Estudios.
+
 • Los Docentes de esta Facultad que realicen tareas de investigación con dedicación exclusiva en
 la misma, y que sean becarios o miembros de Instituciones Científicas Reconocidas.
+
 • Los miembros de Instituciones con las cuales haya convenio de reciprocidad en la exención de
 aranceles.
+
 • Becarios e investigadores de CONICET y de la Agencia Nacional de Promoción Científica y
 Tecnológica con lugar de trabajo en esta Facultad.
+
 • Becarios CELFI. 
 
 

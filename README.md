@@ -67,7 +67,7 @@ TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@g
 
 *  Costo: 24000 $.
 
-### Serán eximidos de abonar el arancel:
+**Serán eximidos de abonar el arancel:**
 
 • Los inscriptos al Doctorado de esta Facultad, por el término de un año.
 
@@ -88,15 +88,17 @@ Tecnológica con lugar de trabajo en esta Facultad.
 • Becarios CELFI. 
 
 
-### Abonarán el 50% del arancel solicitado:
+**Abonarán el 50% del arancel solicitado:**
 
 • Alumnos de grado de la FCEN, doctorandos de la FCEN con el plan de estudios completo y
 aprobado, y graduados de la FCEN.
 
-### Abonarán el 80% del arancel solicitado:
+**Abonarán el 80% del arancel solicitado:**
+
 • Personas que se desempeñen en Universidades Nacionales u otros organismos públicos.
 
-### Abonarán el 100%:
+**Abonarán el 100%:**
+
 • Cualquier otro caso no contemplado en los puntos anteriores.
 
 ### Mas información: 

@@ -13,7 +13,7 @@ Por favor, sigue estas instrucciones para instalar GMT 6.4 y el resto de los *so
 
 Necesitarás tres programas (fundamentales):
 
-* Git-for-Windows: versión Git-2.37.2.2-64-bit.exe (o la última disponible) en su [sitio web oficial](https://gitforwindows.org/). Este *software*p permite ejecutar los *scripts* de bash en Windows.
+* Git-for-Windows: versión Git-2.37.2.2-64-bit.exe (o la última disponible) en su [sitio web oficial](https://gitforwindows.org/). Este *software* permite ejecutar los *scripts* de bash en Windows.
 
 * GMT para Windows: version gmt-6.4.0-win64.exe en https://www.generic-mapping-tools.org/download/. Incluye los *softwares* GDAL, ghostscript y ffmpeg. 
 

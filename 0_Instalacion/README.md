@@ -11,7 +11,7 @@ que obtiene el mapa y la animación correctos.
 
 ## Instalar los programas
 
-1. Siga las [instrucciones de instalación](../Instalacion.md).
+1. Siga las [instrucciones de instalación](../Instalacion.MD).
 
 
 ## Descargar repositorio

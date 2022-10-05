@@ -14,7 +14,7 @@ TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@g
 
 ### Estudiantes externos a la FCEN:
 
-1. Ver la normativa para el pago de [arancel](https://github.com/Esteban82/FCEN-2022/edit/WIP-Inscripcion/README.md##Arancel) y realizar el pago (si corresponde). Ante la duda, consultar al docente o a [Secretaría de Posgrado](https://exactas.uba.ar/ensenanza/cursos-de-posgrado/). 
+1. Ver la normativa para el pago de arancel y realizar el pago (si corresponde). Ante la duda, consultar al docente o a [Secretaría de Posgrado](https://exactas.uba.ar/ensenanza/cursos-de-posgrado/). 
 2. Enviar la siguiente documentación al docente responsable. Él será el encargado de gestionar ante la Secretaría de Posgrado la habilitación correspondiente para su inscripción en [SIU Guarani](https://inscripciones.exactas.uba.ar/exactas/):
 
   * Fotocopia de título universitario 

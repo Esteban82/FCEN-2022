@@ -1,5 +1,3 @@
-# Curso de Postgrado "Geoinformática aplicada a la cartografía multitemática"
-
 ## Pre-inscripción y consultas
 
 TODOS los estudiantes deberán comunicarse conmingo por mail (federico.esteban@gmail.com).

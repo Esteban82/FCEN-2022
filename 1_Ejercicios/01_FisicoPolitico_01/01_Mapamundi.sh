@@ -6,7 +6,7 @@
 	title=01_Mapamundi
 	echo $title
 
-#	Proyecciones miscelanas. Requieren 1 parámetro + 1 opcional: (Lon0/)Ancho
+#	Proyecciones miscelaneas. Requieren 1 parámetro + 1 opcional: (Lon0/)Ancho
 #	Proyeccion (W= MollWeide) 15 cm de ancho (o alto +dh). 
 	PROJ=W15c
 	PROJ=W-65/15c

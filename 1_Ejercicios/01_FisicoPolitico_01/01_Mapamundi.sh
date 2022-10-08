@@ -8,7 +8,7 @@
 
 #	Proyecciones miscelaneas. Requieren 1 parámetro + 1 opcional: (Lon0/)Ancho
 #	Proyeccion (W= MollWeide) 15 cm de ancho (o alto +dh). 
-	PROJ=W15c
+	#PROJ=W15c
 	PROJ=W-65/15c
 	#PROJ=W-65/15c+dh
 
@@ -28,6 +28,9 @@ gmt begin $title png
 #	Pintar areas húmedas (-SColor). Mares, Lagos y Rios.
 	gmt coast -Sdodgerblue2
 
+#	Para acceder a la documentacion de como usar colores en GMT.
+	# gmt docs colors
+
 #	Dibujar Linea de Costa con una ancho (-Wpen) de 0.25 
 	gmt coast -W
 
@@ -46,10 +49,10 @@ gmt end # show
 
 # 	Ejercicios sugeridos
 #	***********************************************************************
-#	1. Cambiar el titulo del grafico (y del archivo de salida; (variable $title).
+#	1. Cambiar el titulo del grafico (y del archivo de salida; variable $title).
 #	2. Cambiar ancho de la figura a 10 cm de ancho (10c), y a 8 cm de alto (8+dh).
 #	3. Cambiar el tipo de proyección Miscelánea Hammer (H) y Robinson (N).
-#	4. Cambiar el meridiano central a 60. 
-#	5. Cambiar el color para áreas secas (utilizar colornames)-
+#	4. Cambiar el meridiano central a 60.
+#	5. Cambiar el color para áreas secas (utilizar colornames).
 #	6. Cambiar el color para áreas húmedas (utilizar colornames).
-#	7. Cambiar/agregar otros formatos de salida (pdf, eps, tiff)
+#	7. Cambiar/agregar otros formatos de salida (pdf, eps, tiff).

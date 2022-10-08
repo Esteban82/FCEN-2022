@@ -14,11 +14,6 @@
 #	Region geografica del mapa (W/E/S/N) d=-180/180/-90/90 g=0/360/-90/90
 	REGION=d
 
-#	Parametros por Defecto
-#	-----------------------------------------------------------------------------------------------------------
-#	Sub-seccion GMT
-	gmt set GMT_VERBOSE w
-
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
 gmt begin $title png

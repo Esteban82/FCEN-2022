@@ -26,11 +26,6 @@
 #	PROJ=M15c
 #	PROJ=U-20/13c
 
-#	Parametros por Defecto
-#	-----------------------------------------------------------------------------------------------------------
-#	Sub-seccion GMT
-	gmt set GMT_VERBOSE w
-
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
@@ -38,9 +33,9 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	Pintar areas húmedas: Oceanos (-S) y Lagos (-Cl/) y Rios-Lagos (-Cr/)
+#	Pintar areas húmedas: Oceanos (-S) y Lagos (-C+l) y Rios-Lagos (-C+r)
 	color=dodgerblue2
-	gmt coast -Df -S$color -Cl/green -Cr/red
+	gmt coast -Df -S$color -Cgreen+l -Cred+r
 
 #	Resaltar paises DCW (AR: Argentina soberana, FK: Malvinas, GS: Georgias del Sur y Sandwich del Sur)
 	gmt coast -EAR,FK,GS+grosybrown2+p
@@ -85,9 +80,7 @@ gmt begin $title png
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
-gmt end show
-
-	rm gmt.*
+gmt end #show
 
 #	Ejercicios Sugeridos:
 #	1. Ejercicio de combinación de argumentos -S -G -W para dibujar símbolos, líneas y áreas (lineas 77 a 83).

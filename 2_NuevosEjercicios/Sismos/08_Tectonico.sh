@@ -79,7 +79,7 @@ gmt begin $title png
 	
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), ancho (+w), elegante(+f), unidad arriba de escala (+l), unidad con los valores (+u)
-	Ggmt basemap -Lg-68/-62+c+w500k+f+l
+	gmt basemap -Lg-68/-62+c+w500k+f+l
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
 	gmt basemap -Bxaf -Byaf

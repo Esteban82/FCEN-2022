@@ -12,11 +12,17 @@ TIME="starttime=2021-01-01%2000:00:00&endtime=2021-12-31%2000:00:00"
 
 MAG="minmagnitude=5"
 #Magnitud minima=
-ORDER="orderby=time-asc" # Se puede modificar??
+ORDER="orderby=time-asc"
+# Se puede modificar??
 URL="${SITE}?${TIME}&${MAG}&${ORDER}"
 
 # Descargar los datos y reformatearlos.
-# We get the data via the URL and reformat using gmt convert.  Here we use the
-# -i option to shuffle the columns, plus scaling the magnitude (col 4) by 50 to
-# yield a fake symbol size in km
-gmt convert ${URL} -i2,1,3,4+s50,0 -hi1 > quakes.txt
+#curl ${URL} > test.txt
+gmt convert ${URL} -i2,1,3,4,0 -hi1 > quakes.txt
+#gmt which ${URL} -G
+#gmt which @usgs_quakes_22.txt -G
+wc quakes.txt
+
+gmt plot quakes.txt -Sc0.1c -W0.1 -Gred -Baf -Ra -png sismos -fg 
+
+w

@@ -65,20 +65,17 @@ gmt begin $title png
 #	gmt plot "Sismos/USGS.txt"  -W0.1 -C    -Sc0.1c    	# Color variable (3 columna) y tamaño fijo
 	gmt plot "Sismos/USGS.txt"  -W0.1 -C 	-Scp		# Color (3a col) y tamaño (4a col) variable 
 
-#	Convertir tabla de datos 	
-#	gmt convert query.csv -h1 -i2,1,3,4 > Sismos.txt
-
 #	Plotear datos originales (ver -h y -i)
 #	gmt plot "Sismos/query.csv" -W.1 -C -Scp -h1 -i2,1,3,4     
 
 #	Dibujar Mecanismos Focales
 #	-----------------------------------------------------------------------------------------------------------
 #	Datos Global CMT. Tamaño Proporcional a la magnitud (-M: Tamaño Homogeneo)
-#	gmt meca "Mecanismos_Focales/CMT_1976-2013.txt" -Sd0.15/6
-#	gmt meca "Mecanismos_Focales/CMT_1976-2013.txt" -Sd0.15/0 -Gred          
-#	gmt meca "Mecanismos_Focales/CMT_2014-2015.txt" -Sd0.15/0 -Gorange
-#	gmt meca Mecanismos_Focales/CMT_*.txt           -Sd0.15/0 -Gorange
-	gmt meca Mecanismos_Focales/CMT_*.txt           -Sd0.15/0 -Gorange -M
+#	gmt meca Mecanismos_Focales/CMT_1976-2013.txt -Sd0.15/6
+#	gmt meca Mecanismos_Focales/CMT_1976-2013.txt -Sd0.15/0 -Gred          
+#	gmt meca Mecanismos_Focales/CMT_2014-2015.txt -Sd0.15/0 -Gorange
+#	gmt meca Mecanismos_Focales/CMT_*.txt         -Sd0.15/0 -Gorange
+	gmt meca Mecanismos_Focales/CMT_*.txt         -Sd0.15/0 -Gorange -M
 	
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), ancho (+w), elegante(+f), unidad arriba de escala (+l), unidad con los valores (+u)
@@ -96,6 +93,9 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #
 #	Ejercicios Sugeridos:
-#	1. En las lineas 44-45 se utilza plot para dibujar lines correspodientes a fallas de rumbo e inversas. Modificar el formato (ver manpage de plot el formato de -Sf).
-#	2. En las lineas 72-74 se crea un cpt que luego se utiliza para pintar los sismos. Modificar los rangos de valores de cpt y los colores asginados. 
-#	3. Ver como descargar y dibujar mecanismos focales (90-98).
+#	1. En las lineas 45-46 se utilza plot para dibujar lines correspodientes a fallas de rumbo e inversas. 
+#      Modificar el formato (ver manpage de plot el formato de -Sf).
+#	2. En las linea 58 se crea un cpt que luego se utiliza para pintar los sismos. 
+#	   Modificar los rangos de valores de cpt y los colores asginados. 
+#	3. Ver como descargar y dibujar mecanismos focales (73-78). Mas info 
+#      en https://mapasgeologicos.blogspot.com/p/blog-page_70.html).

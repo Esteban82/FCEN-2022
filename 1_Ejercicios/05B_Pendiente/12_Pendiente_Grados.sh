@@ -17,7 +17,7 @@
 	PROJ=M15c
 
 #	Grilla de entrada
-	GRD=@earth_relief_30s
+	GRD=@earth_relief_30s_p
 
 # 	Archivos temporales
 	CUT=tmp_$title.nc
@@ -38,8 +38,8 @@ gmt begin $title png
 #	Calcular Grilla con modulo del gradiente (-D) para grilla con datos geograficos (-fg)
 	gmt grdgradient $CUT -D -S$CUT -fg
 
-#	Convertir modulo del gradiente a inclinacion (pendiente) en radianes (ATAN), y luego a grados (R2D)
-	gmt grdmath $CUT ATAN R2D = $CUT
+#	Convertir modulo del gradiente a inclinacion (pendiente) en grados (ATANDF).
+	gmt grdmath $CUT ATAND = $CUT
 #	---------------------------------------------
 
 #	Obterner Informacion de la grilla para crear paleta de colores (makecpt)
@@ -78,7 +78,7 @@ gmt begin $title png
 	gmt coast -Da -W1/faint
 
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), 
-	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l
+	gmt basemap -Ln0.88/0.075+c+w100k+f+l
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)

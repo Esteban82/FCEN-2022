@@ -13,7 +13,7 @@
 	PROJ=M15c
 
 #	Grilla 
-	GRD=@earth_relief_30s
+	GRD=@earth_relief_30s_p
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc

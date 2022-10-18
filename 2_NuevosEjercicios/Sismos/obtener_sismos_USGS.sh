@@ -5,24 +5,25 @@
 # Datos a modificar:
 # Se pueden editar las fechas y magnitudes. 
 SITE="https://earthquake.usgs.gov/fdsnws/event/1/query.csv"
-TIME="starttime=2021-01-01%2000:00:00&endtime=2021-12-31%2000:00:00"
+TIME="starttime=1921-01-01%2000:00:00&endtime=2021-12-31%2000:00:00"
 #StartTime=2021-01-01%2000:00:00
 #EndTime=2021-12-31%2000:00:00
 #Region=
 
-MAG="minmagnitude=5"
+MAG="minmagnitude=2.5"
 #Magnitud minima=
 ORDER="orderby=time-asc"
-minlongitude=-80
-maxlongitude=-50
-minlatitude=-70
-maxlatitude=-40
+ymin="minlatitude=-80"
+ymax="maxlatitude=-50"
+xmin="minlongitude=-70"
+xmax="maxlongitude=-40"
 
 # Se puede modificar??
-URL="${SITE}?${TIME}&${MAG}&${ORDER}"
-#URL="${SITE}?${TIME}&${MAG}&${ORDER}&"
+#URL="${SITE}?${TIME}&${MAG}&${ORDER}"
+URL="${SITE}?${TIME}&${MAG}&${ORDER}&${xmin}&${xmax}&${ymin}&${ymax}"
 
-echo $URL
+#URL="https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime=2021-01-01%2000:00:00&endtime=2021-12-31%2000:00:00&minmagnitude=5&orderby=time-asc"
+#echo $URL
 
 # Descargar los datos y reformatearlos.
 #curl ${URL} > test.txt
@@ -30,8 +31,9 @@ gmt convert ${URL} -i2,1,3,4,0 -hi1 > quakes.txt
 #gmt which ${URL} -G
 #gmt which @usgs_quakes_22.txt -G
 #wc quakes.txt
+gmt info quakes.txt
 
-#gmt plot quakes.txt -Sc0.1c -W0.1 -Gred -Baf -Ra -png sismos -fg 
+gmt plot quakes.txt -Sc0.05c -W0.1 -Gred -Baf -Rd -png sismos -fg 
 
 
 # 2. Descargar Mecanismos focales y reformatearlos

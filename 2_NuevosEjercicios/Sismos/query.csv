@@ -1914,7 +1914,7 @@ time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,
 2021-11-02T02:28:07.681Z,-22.7728,171.6065,10,5.3,mww,,23,3.845,0.83,us,us7000fqp8,2022-01-14T17:58:52.040Z,"southeast of the Loyalty Islands",earthquake,7.7,1.7,0.089,12,reviewed,us,us
 2021-11-02T04:20:24.242Z,-58.2639,-29.677,10,5,mb,,82,5.504,0.53,us,us7000frs2,2022-01-14T17:59:04.040Z,"South Sandwich Islands region",earthquake,13.4,0.9,0.108,27,reviewed,us,us
 2021-11-02T04:49:17.804Z,-56.303,-26.1282,10,5.1,mb,,44,6.254,0.56,us,us7000fqqc,2022-01-14T17:58:52.040Z,"South Sandwich Islands region",earthquake,7.1,1.7,0.067,72,reviewed,us,us
-2021-11-02T08:34:48.111Z,14.6885,145.6134,102.11,5,mb,,56,1.31,0.86,us,us7000fqrw,2022-10-11T08:44:52.446Z,"30 km S of San Jose Village, Northern Mariana Islands",earthquake,9.5,4.9,0.032,313,reviewed,us,us
+2021-11-02T08:34:48.111Z,14.6885,145.6134,102.11,5,mb,,56,1.31,0.86,us,us7000fqrw,2022-10-18T08:44:55.892Z,"30 km S of San Jose Village, Northern Mariana Islands",earthquake,9.5,4.9,0.032,313,reviewed,us,us
 2021-11-02T16:43:52.813Z,-6.8798,130.4969,94,5.9,mww,,29,4.304,0.82,us,us7000fqve,2022-01-14T17:58:54.040Z,"285 km WSW of Tual, Indonesia",earthquake,6.8,1.9,0.068,21,reviewed,us,us
 2021-11-02T17:00:46.657Z,-62.5813,155.4551,10,5.4,mww,,81,8.309,0.65,us,us7000fqw8,2022-01-14T17:58:55.040Z,"Balleny Islands region",earthquake,10.7,1.8,0.098,10,reviewed,us,us
 2021-11-02T20:55:06.124Z,-12.1397,65.5626,10,5.4,mwb,,41,7.86,0.97,us,us7000fqyj,2022-01-14T17:58:55.040Z,"Mid-Indian Ridge",earthquake,8.5,1.7,0.055,32,reviewed,us,us
@@ -2155,7 +2155,7 @@ time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,
 2021-12-20T16:05:25.749Z,42.3918,142.6649,40.84,5.1,mb,,74,0.524,0.42,us,us6000gdup,2022-03-01T16:38:18.040Z,"25 km ENE of Shizunai-furukawach?, Japan",earthquake,5.5,5.2,0.025,515,reviewed,us,us
 2021-12-20T16:34:26.989Z,-26.1349,-64.688,10,5,mb,,87,4.04,0.57,us,us6000gdvs,2022-03-01T16:38:18.040Z,"40 km N of Burruyacú, Argentina",earthquake,7.3,1.8,0.068,72,reviewed,us,us
 2021-12-20T20:10:20.310Z,40.2978333,-124.626,16.51,5.65,ml,63,234,0.217,0.18,nc,nc71127029,2022-03-01T16:38:21.040Z,"29km W of Petrolia, CA",earthquake,0.9,0.42,0.146,3,reviewed,nc,nc
-2021-12-20T20:10:31.310Z,40.3901667,-124.298,27.04,6.2,mw,33,170,0.06557,0.13,nc,nc73666231,2022-10-10T20:20:34.628Z,"7km N of Petrolia, CA",earthquake,0.46,0.34,,0,reviewed,nc,nc
+2021-12-20T20:10:31.310Z,40.3901667,-124.298,27.04,6.2,mw,33,170,0.06557,0.13,nc,nc73666231,2022-10-17T20:20:47.324Z,"7km N of Petrolia, CA",earthquake,0.46,0.34,,0,reviewed,nc,nc
 2021-12-21T01:34:30.668Z,-15.8861,167.8991,158.16,5,mb,,99,0.8,0.57,us,us6000ge1l,2022-03-01T16:38:40.040Z,"56 km ENE of Lakatoro, Vanuatu",earthquake,9.5,4.6,0.08,50,reviewed,us,us
 2021-12-21T02:55:12.180Z,5.381,126.2414,70.33,5,mb,,109,1.802,0.81,us,us7000g8z1,2022-03-01T16:38:44.040Z,"86 km E of Sarangani, Philippines",earthquake,6.2,7.8,0.141,16,reviewed,us,us
 2021-12-21T04:24:35.760Z,-54.2486,-40.5078,10,5,mb,,128,2.358,0.58,us,us6000ge2u,2022-03-01T16:38:46.040Z,"South Atlantic Ocean",earthquake,13.6,1.9,0.094,36,reviewed,us,us

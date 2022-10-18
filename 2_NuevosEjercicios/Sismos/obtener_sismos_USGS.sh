@@ -25,4 +25,5 @@ wc quakes.txt
 
 gmt plot quakes.txt -Sc0.1c -W0.1 -Gred -Baf -Ra -png sismos -fg 
 
-w
+URL="https://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/jan76_dec17.ndk"
+gmt which $URL -G

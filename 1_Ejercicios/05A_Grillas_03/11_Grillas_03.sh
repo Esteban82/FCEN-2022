@@ -13,7 +13,7 @@ clear
 	echo $title
 
 #	Grilla 
-	GRD=@earth_relief_03m
+	GRD=@earth_relief_15m
 
 #	Region y proyeccion geografica
 	REGION=CO,AR,BR
@@ -36,11 +36,12 @@ clear
 	gmt basemap -R$REGION -J$PROJ -B+n
 
 #	Recortar Grilla
-	gmt grdcut $GRD -G$CUT -R$REGION
+#	gmt grdcut $GRD -G$CUT -R$REGION
 
 #	Extraer informacion de la grilla recortada para determinar rango de CPT
-	gmt grdinfo $CUT
-#	gmt grdinfo $CUT -T50
+#	gmt grdinfo $CUT
+	gmt grdinfo $CUT -T0
+	gmt grdinfo $CUT -T100
 #	gmt grdinfo $CUT -Cn
 #	gmt grdinfo $CUT -Cn -T50 -o4
 #	gmt grdinfo $CUT -Cn -o5
@@ -48,7 +49,7 @@ clear
 #	Crear variables con los valores minimo y maximo 
 	min=`gmt grdinfo $CUT -Cn -o4`
 	max=`gmt grdinfo $CUT -Cn -o5`
-	echo $min $max
+	echo Valor minimo: $min y Valor maximo: $max
 
 #	Combinacion 1
 #	gmt makecpt -Cabyss -T-8400/0 -N -H >  $color
@@ -66,8 +67,8 @@ clear
 #	gmt makecpt -Cgray  -T0/$max    -H >> $color
 
 #	Combinacion 3B
-#	gmt makecpt -Cbathy -T$min/0 -N -H >  $color
-#	gmt makecpt -Cgray  -T0/$max -I -H >> $color
+	gmt makecpt -Cbathy -T$min/0 -N -H >  $color
+	gmt makecpt -Cgray  -T0/$max -I -H >> $color
 
 #	Combinacion 4
 #	gmt makecpt -Cocean  -T$min/0 -N -H >  $color
@@ -79,23 +80,30 @@ clear
 
 #	Combinacion 6
 #	Link para cpt de topografia: http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/topo.html
-	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/esri/hypsometry/eu/europe_3.cpt"
-#	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/wkp/schwarzwald/wiki-schwarzwald-cont.cpt"
+#	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/esri/hypsometry/eu/europe_3.cpt"
+	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/wkp/schwarzwald/wiki-schwarzwald-cont.cpt"
 #	URL="" # Agregar URL de otro CPT
+	#URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/wkp/mars/wiki-mars.cpt"
 	gmt which -G $URL 		#Descarga el archivo y lo guarda con el nombre original
 	top=$(gmt which -G $URL)	#Idem y guarda el nombre en la variable %top  
 
-	gmt makecpt -Coslo -T$min/0 -N -H >  $color
-	gmt makecpt -C$top -T0/$max    -H >> $color
+	#gmt makecpt -Coslo -T$min/0 -N -H >  $color
+	#gmt makecpt -C$top -T0/$max    -H >> $color
+
+	#gmt makecpt -C$top -T$min/$max    -H > $color
+	#gmt makecpt -C$top -T$min/$max
+	gmt makecpt -C$top `gmt grdinfo $CUT -T0`
+	gmt makecpt -C$top -T-8087.5/6288
 
 #	Crear grilla para sombreado
-	gmt grdgradient $CUT -A270 -G$SHADOW -Nt1
+#	gmt grdgradient $CUT -A270 -G$SHADOW -Nt1
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
-	gmt grdimage $CUT -C$color -I$SHADOW
+#	gmt grdimage $CUT -I$SHADOW
+	gmt grdimage $CUT -I$SHADOW -C
 
 #	Agregar escala de colores a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
-	gmt colorbar -DJRM+o0.3c/0+w15/0.618c -C$color -Ba1+l"Elevaciones (km)" -I -W0.001
+	gmt colorbar -DJRM+o0.3c/0+w15/0.618c -C -Ba1+l"Elevaciones (km)" -I -W0.001
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar frame

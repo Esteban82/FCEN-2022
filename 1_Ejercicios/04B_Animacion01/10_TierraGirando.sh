@@ -15,7 +15,7 @@ title=10_TierraGirando
 	
 #	Movie: Crear figuras y animacion
 #	Opciones C: Canvas Size. -N: Nombre de la animacion. -G: Color fondo. D: fps. F: formato video. M: Master frame.
-	gmt movie "Master_Hemisferico.sh" -N$title -T"tmp_time.txt" -C15cx15cx100 -D24 -Vi -Ml,png -Gblack -Fmp4 -Z
+	gmt movie "Master_Hemisferico.sh" -N$title -T"tmp_time.txt" -C15cx15cx10 -D24 -Vi -Ml,png -Gblack -Fmp4 -Z
 
 #	Borrar Temporales
 	rm gmt.conf

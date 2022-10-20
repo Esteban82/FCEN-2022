@@ -34,7 +34,7 @@ gmt begin $title png
 
 #	Pintar areas humedas: Oceanos (-S) y Lagos (-Cl/)f
 	color=dodgerblue2
-	gmt coast -Da -S$color
+	gmt coast -Da -S$color 
 
 #	Dibujar Linea de Costa (level/, where level is 1-4 and represent coastline, lakeshore, /island-in-lake shore, and lake-in-island-in-lake shore)
 	gmt coast -Da -W1/faint
@@ -48,22 +48,27 @@ gmt begin $title png
 	gmt plot "Datos/ridge.gmt"     -A -W0.4,white
 
 #	Plates Project: LIPs. Dibujar patrones
-#	gmt plot "Datos/LIPS.2011.gmt" -A -Gp300/29 
+	#gmt plot "Datos/LIPS.2011.gmt" -A -Gp300/29 
 #	gmt plot "Datos/LIPS.2011.gmt" -A -Gp300/29
-	gmt plot "Datos/LIPS.2011.gmt" -A -Gp300/29:BivoryFred3 
+	#gmt plot "Datos/LIPS.2011.gmt" -A -Gp150/29:BgreenFred3
+	gmt plot "Datos/LIPS.2011.gmt" -A -Gp150/29:B-Fred3
+	#gmt plot "Datos/LIPS.2011.gmt" -A -Ggreen@50 -Wthick,black
+
 
 #	Dibujar Sismos
 #	-----------------------------------------------------------------------------------------------------------
 #	Crear cpt para sismos someros (<100 km), intermedios (100 - 300 km) y profundos (> 300 km)
-#	gmt makecpt -Cred,green,blue,black -T0,100,300,600,1000
-	gmt makecpt -Crainbow -T0/700
-	gmt colorbar -DjBL+o0.2c+w-3c/0.5c
+	gmt makecpt -Cred,green,blue,black -T0,100,300,600,10000
+	#gmt makecpt -Cred,green,blue,black -T0,100,300,600 -Z
+	#gmt makecpt -Cred,green,blue,black -T0/100/300/600
+	#gmt makecpt -Crainbow -T0/700
+	gmt colorbar -DjBL+o0.2c+w-3c/0.5c -L
 
 #	Dibujar Sismos del USGS segun magnitud (-Scp), y color segun profundidad (-C). 
 #	-Scp: El tamaño del circulo corresponde a la magnitud medida en puntos tipograficos. 
 #	gmt plot "Sismos/USGS.txt"  -W0.1 -Gred -Sc0.1c		# Tamaño y color fijo 
 #	gmt plot "Sismos/USGS.txt"  -W0.1 -C    -Sc0.1c    	# Color variable (3 columna) y tamaño fijo
-	gmt plot "Sismos/USGS.txt"  -W0.1 -C 	-Scp		# Color (3a col) y tamaño (4a col) variable 
+#	gmt plot "Sismos/USGS.txt"  -W0.1 -C 	-Scp	-t80	# Color (3a col) y tamaño (4a col) variable 
 
 #	Plotear datos originales (ver -h y -i)
 #	gmt plot "Sismos/query.csv" -W.1 -C -Scp -h1 -i2,1,3,4     
@@ -72,14 +77,14 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #	Datos Global CMT. Tamaño Proporcional a la magnitud (-M: Tamaño Homogeneo)
 #	gmt meca Mecanismos_Focales/CMT_1976-2013.txt -Sd0.15/6
-#	gmt meca Mecanismos_Focales/CMT_1976-2013.txt -Sd0.15/0 -Gred          
+	#gmt meca Mecanismos_Focales/CMT_1976-2013.txt -Sd0.15/0 -Gred          
 #	gmt meca Mecanismos_Focales/CMT_2014-2015.txt -Sd0.15/0 -Gorange
 #	gmt meca Mecanismos_Focales/CMT_*.txt         -Sd0.15/0 -Gorange
-	gmt meca Mecanismos_Focales/CMT_*.txt         -Sd0.15/0 -Gorange -M
+	#gmt meca Mecanismos_Focales/CMT_*.txt         -Sd0.15/0 -Gorange -M
 	
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), ancho (+w), elegante(+f), unidad arriba de escala (+l), unidad con los valores (+u)
-	Ggmt basemap -Lg-68/-62+c+w500k+f+l
+	gmt basemap -Lg-68/-62+c+w500k+f+l
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
 	gmt basemap -Bxaf -Byaf

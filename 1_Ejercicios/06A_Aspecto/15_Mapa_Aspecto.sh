@@ -18,7 +18,7 @@ clear
 	PROJ=M15c
 
 #	Grilla 
-	GRD=@earth_relief_30s
+	GRD=@earth_relief_30s_p
 
 # 	Archivos temporales
 	CUT=tmp_$title.nc
@@ -72,7 +72,7 @@ clear
 	gmt coast -Da -W1/faint
 
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), 
-	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l
+	gmt basemap -Ln0.88/0.075+c+w100k+f+l
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)

@@ -11,6 +11,7 @@ clear
 	REGION=-72/-64/-35/-30
 	PROJ=M15c
 	p=160/30
+	p=180/90
 
 #	Resolucion
 	RES=01m
@@ -48,7 +49,11 @@ gmt begin $title png
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Transicion entre mapas. Subir 2º mapa 7,5 cm.
-	gmt basemap -B+n -Y7.0c
+	#gmt basemap -B+n -Y3.5c
+	#gmt basemap -B+n -Yh+0.3c
+	gmt basemap -B+n -Xw+0.3c
+
+
 #	-----------------------------------------------------------------------------------------------------------
 
 #	Dibujar mapa 2

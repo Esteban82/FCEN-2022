@@ -23,18 +23,20 @@
 	gmt set	FONT_LABEL 16p,19,Red
 	gmt set	FONT_ANNOT_PRIMARY 12p,Helvetica,green
 
-	gmt set PS_CHAR_ENCODING ISOLatin1+
+	#gmt set PS_CHAR_ENCODING ISOLatin1+
+	gmt set PS_CHAR_ENCODING Standard+
+
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
 	
-#	Setear la region y proyeccion
+#	Setear el dominio y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	Tìtulo de la figura (-B+t)
-	gmt basemap -B+t"Diagrama Harker"
+#	Titulo de la figura (-B+t)
+	gmt basemap -B+t"Diagrama Harker \341"
 
 #	Definir color de fondo del grafico (-B+g). Porcentaje de transparencia (-t)
 #	gmt basemap -B+g200

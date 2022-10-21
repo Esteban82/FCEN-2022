@@ -12,7 +12,7 @@
 
 #	Region Geografica
 	REGION=-79/-20/-63/-50
-#	REGION=IN	# India 
+	#REGION=IN	# India 
 
 #	Proyeccion Cilindrica: (M)ercator
 	PROJ=M15c
@@ -85,7 +85,7 @@ gmt begin $title png
 	
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), ancho (+w), elegante(+f), unidad arriba de escala (+l), unidad con los valores (+u)
-	gmt basemap -Lg-68/-62+c-54+w500k+f+l
+	gmt basemap -Ln0.1/0.2+c+w500k+f+l
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
 	gmt basemap -Bxaf -Byaf
@@ -148,6 +148,7 @@ gmt begin $title png
 		gmt coast -Rg -JG$Lon/$Lat/? -Gwhite -Slightblue3 -C- -Bg
 		gmt coast -W1/faint -N1
 		gmt plot tmp_area -Wthin,darkred
+		echo $Lon $Lat | gmt plot -Sa0.1c -Gred
 	gmt inset end
 
 #   ----------------------------------------------------------------------------------
@@ -161,7 +162,7 @@ gmt end
 #	1. Agregar elementos a la leyenda (ver links de interes)
 #	2. Ver otras opciones del mapa de ubicación (lineas 144 a 147, dejar solo una linea sin comentar).
 #	3. Modificar la posición y tamaño del mapa de ubicación.
-#	4, Modificar el ancho de la leyenda (principal y auxiliar).
+#	4. Modificar el ancho de la leyenda (principal y auxiliar).
 
 
 #	Links de interes

@@ -45,11 +45,13 @@ gmt begin $title png
 	gmt basemap -R$REGION -J$PROJ -B+n
 
 #	Sombreado a partir del DEM
-#	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt0.8
+	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt0.8
 #	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt1
 #	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt1.2
-	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Ne0.6
- 
+#	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Ne0.6
+#	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt1.2+a-0.5
+
+
 #	Graficar Imagen Satelital
 	gmt grdimage @earth_${daytime}_$RES -I$SHADOW
 

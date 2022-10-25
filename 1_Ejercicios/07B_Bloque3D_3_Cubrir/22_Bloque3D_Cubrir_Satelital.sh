@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 clear
 
+# Proxy de la FCEN (direccion de proxy:numero de puerto).
+# Descomentar si se esta en FCEN
+export http_proxy="http://proxy.fcen.uba.ar:8080"
+
 #	Temas a ver:
 #	1. Cubrir bloque 3D con imagen satelital.
 
@@ -79,8 +83,8 @@ gmt begin $title png
 	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.5,black 
 	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
 
-#	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), 
-	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l -p$p/0
+#	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano central (+c), 
+	gmt basemap -Ln0.88/0.075+c+w100k+f+l -p$p/0
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)

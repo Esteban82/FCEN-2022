@@ -4,7 +4,7 @@ clear
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=23_Perfil_Topografico
+	title=23_Perfil_Topografico_2
 	echo $title
 	
 #	Dimensiones del Grafico: Longitud (L), Altura (H).
@@ -50,28 +50,15 @@ gmt begin $title png
 #	Informacion para crear el grafico. 3a Columna datos en km. 4a Columna datos de Topografia.
 	gmt info tmp_data
 
-#	Datos para el perfil:
-#	-------------------------------------------------
-#	Distancia del Perfil (km):
-#	KM=2825.5
-	KM=$(gmt info tmp_data -C -o5)
-
-#	Altura (m) minima y maxima:
-	#Min=-6200
-	#Max=5300
-	Min=$(gmt info "tmp_data" -C -o6)
-	Max=$(gmt info "tmp_data" -C -o7)
-	DOMINIO=$(gmt info tmp_data -I+e0 -i2,3)
-	echo $DOMINIO
-
-#	Crear Grafico
-	gmt basemap -JX$L/$H -R0/$KM/$Min/$Max -B+n
+#	Dibujar datos de columnas 3a y 4a (-i2,3)
+	gmt plot tmp_data -JX$L/$H -Re -W0.5,blue -i2,3  # Region exacta
+#   gmt plot tmp_data -JX$L/$H -Ra -W0.5,blue -i2,3  # Region automatica
 
 #	Dibujar Eje X (Sn)
-	gmt basemap -Bxaf+l"Distancia (km)" -BSn
+	gmt basemap -BSn -Bxaf+l"Distancia (km)"
 
-#	Dibujar Eje Y y datos de columnas 3a y 4a (-i2,3)
-	gmt plot tmp_data -W0.5,blue -Byafg+l"Altura (m)" -i2,3 -BwE
+#   Dibujar Eje Y (eW)
+	gmt basemap -BwE -Byafg+l"Altura (m)"
 
 #	Coordenadas Perfil (E, O)
 	echo O | gmt text -F+cTL+f14p -Gwhite -W1
@@ -87,9 +74,4 @@ gmt end
 
 #	Borrar archivos temporales
 #	-----------------------------------------------------------------------------------------------------------
-#	rm tmp_* gmt.*
-
-#	Ejercicios sugeridos
-#	1. Cambiar las coordenas del perfil.
-#	2. Agregar tercer par de coordenadas.
-#	3. Modificar el intervalo de interpolación (sample1d).
+	rm tmp_* gmt.*

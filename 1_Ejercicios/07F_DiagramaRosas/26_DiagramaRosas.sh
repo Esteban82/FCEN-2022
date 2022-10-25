@@ -50,8 +50,8 @@ gmt begin $title png
 
 #	Extraer cantidad de datos y azimuth promedio
 	n=$(gmt rose "tmp_rumbo" $Param -I -o0)
-	az=$(gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0)
-#	az=$(gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0)  # Usar para windows
+	az=$(gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0f)
+#	az=$(gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0f)  # Usar para windows
 
 #	Dibujar Figura
 #	--------------------------------------------------------------------------------------------------------

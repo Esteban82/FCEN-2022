@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 clear
 
+# Proxy de la FCEN (direccion de proxy:numero de puerto).
+# Descomentar si se esta en FCEN
+export http_proxy="http://proxy.fcen.uba.ar:8080"
+
+
 #	Temas a ver:
 #	1. Dibujar datos culturales en bloque 3D.
 
@@ -29,6 +34,7 @@ clear
 # 	Nombre archivo de salida y Variables Temporales
 	CUT=tmp_$title.nc
 	SHADOW=tmp_$title-shadow.nc
+
 
 #	Parametros Generales
 #	-----------------------------------------------------------------------------------------------------------

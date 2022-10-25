@@ -5,7 +5,6 @@ clear
 # Descomentar si se esta en FCEN
 export http_proxy="http://proxy.fcen.uba.ar:8080"
 
-
 #	Temas a ver:
 #	1. Dibujar datos culturales en bloque 3D.
 
@@ -76,6 +75,8 @@ gmt begin $title png
 #	Dibujar datos de coast en 3D
 	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.5,black
 	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
+	gmt coast -R$REGION -Df -M -Ia/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,blue,-
+
 
 #	Dibujar datos IGN en 3D
 	gmt grdtrack -R$REGION IGN/RedVial_Autopista.gmt                       -G$CUT | gmt plot3d -R$REGION3D -p$p -Wthinnest,black

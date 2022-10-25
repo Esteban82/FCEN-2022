@@ -9,7 +9,7 @@ clear
 #	Variables del Mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=Histograma
+	title=25_Histograma
 	echo $title
 
 #	Proyeccion No Geografica. Linear, Logaritmica, Exponencial. JXwidth[/height]

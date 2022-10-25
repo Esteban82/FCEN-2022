@@ -60,9 +60,6 @@ export http_proxy="http://proxy.fcen.uba.ar:8080"
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
 
-#	Recortar Grilla
-	gmt grdcut $GRD -G$CUT -R$REGION
-
 #	Calcular grilla de pendientes (en grados)
 #	---------------------------------------------
 #	Recortar Grilla

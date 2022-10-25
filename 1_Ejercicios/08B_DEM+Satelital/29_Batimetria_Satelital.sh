@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 clear
 
+# Proxy de la FCEN (direccion de proxy:numero de puerto).
+# Descomentar si se esta en FCEN
+export http_proxy="http://proxy.fcen.uba.ar:8080"
+
 #	Temas a ver
 #	1. Combinar imagenes satelitales y grillas aplicando recortes (clip) segun la linea de costa.
 
@@ -42,14 +46,16 @@ gmt begin $title png
 
 #	Recorte (visual)
 #	*************************************************************
-	gmt coast -G    # Recorte para continentes
-#	gmt coast -S    # Recorte para oceanos
+#	gmt coast -G    	# Recorte para continentes
+#	gmt coast -S    	# Recorte para oceanos
+    gmt coast -EAR+c  	# Recorte dentro
+# 	gmt coast -EAR+C   	# Recorte afuera
 
 #	Graficar imagen satelital
 	gmt grdimage $SAT
 
 #	Finalizar recorte
-	gmt coast -Q 
+	gmt coast -Q
 #	*************************************************************
 
 #	-------------------------------------------------------------------------------------------------

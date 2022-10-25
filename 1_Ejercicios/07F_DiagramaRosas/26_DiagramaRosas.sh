@@ -37,16 +37,15 @@ gmt begin $title png
 #	gmt mapproject -fg "Datos.txt" -AF -G+k -o3,2 -s
 
 #	Calcular Azimuth (-AF) y longitud en km (-G+k). -fg: Datos geográficos. Grabar datos.
-	gmt mapproject -fg "Datos.txt" -AF -G+k -o3,2 -s > "tmp_rumbo" 
+#	gmt mapproject -fg "Datos.txt" -AF -G+k -o3,2 -s > "tmp_rumbo" 
 
 #	Extraer informacion
 #	--------------------------------------------------------------------------------------------------------
 #	Datos Estadisticos:
 	echo n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum.
 	gmt rose "tmp_rumbo" $Param -I 
-#	gmt rose "tmp_rumbo" $Param -I -o0
+	gmt rose "tmp_rumbo" $Param -I -o0
 #	gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0f
-#	gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0f   # Usar para windows
 
 #	Extraer cantidad de datos y azimuth promedio
 	n=$(gmt rose "tmp_rumbo" $Param -I -o0)
@@ -67,7 +66,7 @@ gmt begin $title png
 gmt end
 
 #	Borrar archivos temporales
-rm tmp_* gmt.*
+#rm tmp_* gmt.*
 
 #	Ejercicios sugeridos
 #	1. Cambiar el ancho de clase (linea 20).

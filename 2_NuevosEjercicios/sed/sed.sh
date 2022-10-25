@@ -1,10 +1,3 @@
-
-# Remove the extra whitespaces:
-#sed -i "s/^ *//;s/ *$//;s/ \{1,\}/ /g" *.txt
-
-# And this to reduce the decimals to 6 values
-#gmt convert old.txt -fg --IO_COL_SEPARATOR=space --FORMAT_FLOAT_OUT=%.6lf > new.txt
-
 # Ejemplos de SED
 in=example.txt
 

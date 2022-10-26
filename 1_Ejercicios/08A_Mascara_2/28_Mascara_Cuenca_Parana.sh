@@ -61,7 +61,7 @@ gmt begin $title png
 	gmt grdcut $DEM -G$CUT1 -R$REGION
 
 #	Crear/Definir poligono irregular
-	CLIP=Cuenca_Parana.txt
+	cat Cuenca_Parana.txt > $CLIP
 #	gmt coast -M > $CLIP -EPY
 #	gmt coast -M > $CLIP -EAR.A,AR.Y
 #	gmt coast -M > $CLIP -EAR,CH
@@ -76,17 +76,8 @@ gmt begin $title png
 
 #	Crear Mapa
 #	-------------------------------------------------------------
-#	Extraer informacion de la grilla recortada para determinar rango de CPT
-	gmt grdinfo $CUT -T50
-#	Max=$(gmt grdinfo $CUT -C -o7)
-	Max=`gmt grdinfo $CUT -Cn -o5`
-
-#	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
-#	gmt makecpt -Cdem4 -T0/5700
-	gmt makecpt -Cdem4 -T0/$Max
-
 #	Crear Imagen a partir de grilla con sombreado y cpt. -Q: Nodos sin datos sin color 
-	gmt grdimage $CUT -C -Q -I
+	gmt grdimage $CUT -I -Q -Cdem4
 
 #	Agregar escala de colores a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -C -I -DJRM+o0.3c/0+w14/0.618c  -Ba+l"Alturas (km)" -W0.001

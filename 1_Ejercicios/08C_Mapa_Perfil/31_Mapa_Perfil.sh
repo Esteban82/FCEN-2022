@@ -10,37 +10,35 @@ clear
 	title=31_Mapa_Perfil
 	echo $title
 
-#	Region y Proyeeción
+#	Region y Proyección del mapa
 	REGION=-78/-44/-37/-27
 	PROJ=M15c
 
 #	Resolucion de la grilla (y del perfil)
 	RES=15s
 
-#	Base de datos de GRILLAS
+#	Grilla para el mapa
 	DEM=@earth_relief_$RES
+
+# 	Grilla para extraer los datos
+	GRD=@earth_relief_$RES		# Misma grilla topografica
+#	GRD=@earth_faa_01m			# Anomalias de Aire Libre
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
-
-	gmt set MAP_FRAME_AXES WesN
-	gmt set FORMAT_GEO_MAP ddd:mm:ssF
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
 
-#	Abrir archivo de salida (ps)
+#	Setear region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
 #	Mapa Base
 #	********************************************************************
-#	Recortar Grilla Topografica
-	gmt grdcut $DEM -G$CUT -R$REGION
-
-#	Crear Imagen a partir de grilla con sombreado
-	gmt grdimage $CUT -Cgeo -I
+#	Crear Imagen a partir del DEM con sombreado
+	gmt grdimage $DEM -Cgeo -I
 
 #	Agregar escala vertical a partir de CPT (-C). Posicion (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -Dx15.5/0+w5/0.618c -C -Ba+l"Elevaciones (km)" -I -W0.001
@@ -57,14 +55,20 @@ gmt begin $title png
 	-46 -32
 	END
 
-#	Crear datos de perfil (Interpolar, agregar distancia y alturas)
-#	gmt sample1d tmp_line -I$RES -fg | gmt mapproject -G+uk | gmt grdtrack -G$CUT > tmp_data
-	gmt sample1d tmp_line -I$RES -fg     | gmt grdtrack -G$CUT > tmp_data
-#	gmt sample1d tmp_line -I$RES -fg -Am | gmt grdtrack -G$CUT > tmp_data
+#	Interpolar: agrega datos en el perfil segun resolucion de la grilla.
+	gmt sample1d tmp_line -I$RES -fg     > tmp_sample1d
+#	gmt sample1d tmp_line -I$RES -fg -Am > tmp_sample1d
 
+#	Crear variable con region geografica del perfil
+#	Si se trabaja con datos remotos con alta resolucion, conviene definir
+#	la region. Caso contrario, se descargan todos los datos disponibles.	
+	REGION=$(gmt info tmp_sample1d -I+e0.1)
+
+#	Agregar columna con datos extraidos de la grilla
+	gmt grdtrack tmp_sample1d -G$GRD $REGION > tmp_data
 
 #	Dibujar Perfil
-#	gmt plot tmp_line -W0.5,black
+#	gmt plot tmp_data -W0.5,black
 
 #	Dibujar Perfil en el mapa. Z: Escala (metros/cm).
 #	gmt wiggle tmp_data -Z3000c -W                    									# Dibujar solo linea
@@ -76,7 +80,12 @@ gmt begin $title png
 #	********************************************************************
 
 #	-----------------------------------------------------------------------------------------------------------
-#	Cerrar el archivo de salida (ps)
+#	Cerrar la sesion y mostrar archivo
 gmt end
 
 	rm tmp_* gmt.*
+
+# 	Ejercicios sugeridos
+#	1. Cambiar las coordenadas de inicio y fin del perfil.
+#	2. Cambiar a la grilla de anomalias de aire libre (faa en linea 25)
+#	3. Ajustar los parametros del perfil wiggle para que se observen bien las anomalias de Aire Libre

@@ -53,7 +53,7 @@ sed 's/is/es/g' example.txt
 
 echo Reemplazar puntos por comas sed 's/./,/g'
 sed 's/./,/g' example.txt 
-echo Da mal. El . es un comodin que significa cualquier caracter. Por eso reemplaza todas las letras, incluidos los espacios por ,.
+echo Da mal. El "." es un comodin que significa cualquier caracter. Por eso reemplaza todas las letras, incluidos los espacios por ,.
 sed 's/\./,/g' example.txt
 
 

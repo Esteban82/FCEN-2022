@@ -13,7 +13,6 @@ clear
 
 #	Region: Cuyo
 	REGION=-85/-33/-58/15
-	REGION3D=$REGION/0/15
 
 #	Proyeccion Mercator (M)
 	PROJ=M15c
@@ -31,9 +30,12 @@ clear
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
 
-#	Setear variables
-	gmt basemap -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -B+n
+#	Extraer maximo de los datos
+	Max=$(gmt info CopaAmerica.csv -C -o5)
 
+#	Setear variables
+	gmt basemap -R$REGION/0/$Max -J$PROJ -JZ$PROZ -p$persp -B+n
+	
 #	Mapa  Base
 	gmt coast -p -G200 -Sdodgerblue2 -N1
 
@@ -54,9 +56,12 @@ gmt begin $title png
 #	Extraer info
 #	gmt info CopaAmerica.csv
 	T=$(gmt info CopaAmerica.csv -T1 -i2)
+	echo $T
+	#T=-T0/17/1
 
 #	Crear CPT con info previa (-ilong,lat,altura,valor para el color)
-	gmt makecpt -Crainbow $T
+	gmt makecpt -Crainbow $T -F+c
+	#gmt makecpt -Crainbow -E16
 	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -i0,1,2,2 -C
 #	------------------------------------------------
 

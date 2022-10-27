@@ -2,7 +2,7 @@
 clear
 
 # 	Temas a ver:
-#	1. Definer un linea e interpolarla 
+#	1. Definer una linea e interpolarla 
 #	2. Agregar al perfil datos extraidos de una grilla.
 #	3. Graficar los datos en un perfil.
 
@@ -14,7 +14,7 @@ clear
 	
 #	Dimensiones del Grafico: Longitud (L), Altura (H).
 	L=15
-	H=5
+	H=3
 
 #	Resolucion de la grilla (y del perfil)
 	RES=15s
@@ -35,12 +35,13 @@ gmt begin $title png
 	-46 -32
 	END
 
-#	Interpolar: agrega datos en el perfil cada 0.2 km (-I).
+#	Interpolar: agrega datos en el perfil cada 15 seg km (-I).
+#	gmt sample1d tmp_line -I0.2k > tmp_sample1d -fg
 	gmt sample1d tmp_line -I$RES > tmp_sample1d -fg
 
 #	Crear variable con region geografica del perfil
 	REGION=$(gmt info tmp_sample1d -I+e0.1)
-#	echo $REGION
+	echo $REGION
 
 #	Distancia: Agrega columna (3a) con distancia del perfil en km (-G+uk)
 	gmt mapproject tmp_sample1d -G+uk > tmp_track
@@ -72,11 +73,15 @@ gmt begin $title png
 	echo E | gmt text -F+cTR+f14p -Gwhite -W1
 
 #	Agregar Escala (grafica) Horizontal y Vertical (+v) -LjCB+w40+lkm+o0/0.5i
-	gmt basemap -LjCB+w1000+lm+o1.2/0.67+v 
+	gmt basemap -LjCB+w1000+lm+o1.2/0.67+v
 	gmt basemap -LjCB+w200+lkm+o0/0.5
 
 # 	Obtener informacion de la escala en la terminal y de la exageracion vertical.
 	gmt basemap -B+n -Vi
+
+#	Ver informacion de la exageracion vertical en la terminal y graficarla en el perfil	
+	echo E.V.: 0.08 | gmt text -F+cBR+f10p -Gwhite -W1
+
 #   ----------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
 gmt end
@@ -88,4 +93,3 @@ gmt end
 # Ejercicios sugeridos
 # 1. Modificar los puntos que definen el perfil.
 # 2. Agregar mas puntos.
-

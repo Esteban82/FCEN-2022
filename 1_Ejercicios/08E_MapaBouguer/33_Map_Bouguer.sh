@@ -37,7 +37,6 @@ clear
 
 #	Crear grilla a partir de tabla de formato gdf. Stepgrid (-I). Lineas de encabezado (-h).
 	gmt xyz2grd -R$REGION EIGEN-6C4.gdf -h37 -I30m -fg -G$CUT 
-#	gmt xyz2grd -R$REGION EIGEN-6C4.gdf -h37 -I30m -fg -Gtemp_grilla.asc=ei
 
 #	Extraer informacion de la grilla recortada para determinar rango de CPT
 #	gmt grdinfo $CUT

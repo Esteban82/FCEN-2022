@@ -42,11 +42,13 @@ clear
 #	gmt grdinfo $CUT
 
 #	Crear CPT a partir de la grilla para optimizar la distribución de los colores
-#	gmt grd2cpt $CUT -V
+#	gmt grd2cpt $CUT -V 
+#	gmt grd2cpt $CUT -V > /dev/null
 #	gmt grd2cpt $CUT -V -Z 				 			# Z: CPT continuo
 #	gmt grd2cpt $CUT -V -Z -L-200/300    			# L: Limitar valores 
 #	gmt grd2cpt $CUT -V -Z -L-200/300 -D    		# D: extender colores de los extremos
 #	gmt grd2cpt $CUT -V -Z -L-200/300 -D -Cjet		# C: CPT maestra
+#s	gmt grd2cpt $CUT -V -Z -Cred2green -Su			# Su: Simetrica con respecto al 0.
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
 	gmt grdimage $CUT

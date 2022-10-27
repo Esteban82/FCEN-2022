@@ -1,10 +1,13 @@
 #!/bin/bash
 clear
 
+# Proxy de la FCEN (direccion de proxy:numero de puerto).
+# Descomentar si se esta en FCEN
+export http_proxy="http://proxy.fcen.uba.ar:8080"
+
 #	Temas a ver:
 #	1. Agrupar datos
 #	2. Crear heatmap a partir de datos de sismos.
-
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -90,11 +93,12 @@ gmt begin $title png
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
 #	gmt grdimage $CUT -C
-#	gmt grdimage $CUT -C    -t50
-#	gmt grdimage $CUT -C -Q
-	gmt grdimage $CUT -C -Q -t50
+#	gmt grdimage $CUT -C       -t50
+#	gmt grdimage $CUT -C -Q 
+#	gmt grdimage $CUT -C -Q    -t50
+	gmt grdimage $CUT -C -Q -I -t50 
 
-#	Agregar escala de colores a partir de CPT (-C). Posici�n (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
+#	Agregar escala de colores a partir de CPT (-C). Posicion (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -C -DjRT+o1.7c/0.7+w9/0.618c+ef -Baf+l"Cantidad de Sismos cada 100 km@+2@+"  -F+gwhite+p+i+s
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
@@ -104,7 +108,7 @@ gmt begin $title png
 #	Cerrar el archivo de salida (ps)
 gmt end
 
-#	rm tmp_* gmt.*
+	rm tmp_* gmt.*
 
 #	Ejercicios sugeridos
 #	1. Cambiar la resolución de la grilla de densidades (lineas 21-23).

@@ -18,6 +18,7 @@ clear
 
 #	Resolucion de la grilla (y del perfil)
 	RES=15s
+#	RES=05m
 
 #	Base de datos de GRILLAS
 	DEM=@earth_relief_$RES
@@ -31,6 +32,7 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #	Perfil: Crear archivo para dibujar perfil (Long Lat)
 	cat > tmp_line <<- END
+	#Long Lat
 	-76 -32
 	-46 -32
 	END

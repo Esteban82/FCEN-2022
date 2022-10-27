@@ -26,19 +26,6 @@ clear
 	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
 	gmt set FONT_LABEL 8,Helvetica,black
 
-#	Sub-seccion FORMATO
-	gmt set FORMAT_GEO_MAP ddd:mm:ssF
-
-#	Sub-seccion GMT
-	gmt set GMT_VERBOSE w
-
-#	Sub-seccion MAPA
-	gmt set MAP_FRAME_TYPE fancy
-	gmt set MAP_FRAME_WIDTH 0.1
-	gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0
-	gmt set MAP_SCALE_HEIGHT 0.1618
-	gmt set MAP_TICK_LENGTH_PRIMARY 0.1
-
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura

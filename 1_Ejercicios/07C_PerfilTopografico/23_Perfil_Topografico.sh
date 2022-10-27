@@ -14,7 +14,7 @@ clear
 	
 #	Dimensiones del Grafico: Longitud (L), Altura (H).
 	L=15
-	H=3
+	H=5
 
 #	Resolucion de la grilla (y del perfil)
 	RES=15s

@@ -18,7 +18,7 @@ clear
 	RES=15s
 
 #	Grilla para el mapa
-	DEM=@earth_relief_$RES
+	DEM=@earth_relief
 
 # 	Grilla para extraer los datos
 	GRD=@earth_relief_$RES		# Misma grilla topografica

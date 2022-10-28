@@ -24,9 +24,8 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 #	Sub-seccion FUENTE
 	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
-	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,green
+	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,red
 	gmt set FONT_LABEL 8,Helvetica,black
-
 
 #	Sub-seccion FORMATO
 	gmt set FORMAT_GEO_MAP ddd:mm:ssF
@@ -73,8 +72,12 @@ gmt begin $title png
 #	Dibujar Datos en Columnas (o) con color variable
 #	------------------------------------------------
 #	Crear CPT con info previa (-ilong,lat,altura,valor para el color)
-#	gmt makecpt -Crainbow $T
+	gmt makecpt -Crainbow $T
+	gmt makecpt -Crainbow $T -H 
+
 	gmt makecpt -Crainbow $T -F+c0-$Max
+	gmt makecpt -Crainbow $T -F+c0-$Max -H 
+
 	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -i0,1,2,2 -C
 #	------------------------------------------------
 

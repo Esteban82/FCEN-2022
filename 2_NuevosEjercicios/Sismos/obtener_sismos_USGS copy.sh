@@ -52,11 +52,11 @@ gmt convert ${URL} -i2,1,3,4,0 -hi1 > quakes.txt
 #wc quakes.txt
 #gmt info quakes.txt
 
-gmt begin sismos png
+#gmt begin sismos png
 
-gmt plot query.csv -Sc0.05c -W0.1 -Gred -Baf -Rd -fg -h -i2,1
+#gmt plot query.csv -Sc0.05c -W0.1 -Gred -Baf -Rd -fg -h -i2,1
 
-gmt end 
+#gmt end 
 # 2. Descargar Mecanismos focales y reformatearlos
 #URL="https://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/jan76_dec20.ndk"
 #gmt which $URL -G

@@ -30,7 +30,7 @@ clear
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
 
-#	Extraer maximo de los datos
+#	Extraer maximo de los datos para definir la REGION3D
 	Max=$(gmt info CopaAmerica.csv -C -o5)
 
 #	Setear variables
@@ -57,11 +57,10 @@ gmt begin $title png
 #	gmt info CopaAmerica.csv
 	T=$(gmt info CopaAmerica.csv -T1 -i2)
 	echo $T
-	#T=-T0/17/1
 
 #	Crear CPT con info previa (-ilong,lat,altura,valor para el color)
-	gmt makecpt -Crainbow $T -F+c
-	#gmt makecpt -Crainbow -E16
+	gmt makecpt -Crainbow $T -F+c0-$Max
+
 	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -i0,1,2,2 -C
 #	------------------------------------------------
 

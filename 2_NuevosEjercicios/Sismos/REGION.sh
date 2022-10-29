@@ -4,7 +4,7 @@
 	REGION="-79/-20/-63/-20"
 
 #	Crear arregle	
-	IFS='/' && R=( $REGION )
+	IFS='/'; R=( $REGION )
 	echo "value = ${R[0]}"
 	echo "value = ${R[1]}"
 	echo "value = ${R[2]}"

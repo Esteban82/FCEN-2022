@@ -5,57 +5,31 @@
 
 #	Region geografica del mapa (W/E/S/N)
 #	REGION=-79/-20/-63/-20
+    W=-79
+    E=-20
+    S=-63
+    N=-20
 
 #   Datos para los sismos
-#StartTime=2021-01-01%2000:00:00
-#EndTime=2021-12-31%2000:00:00
+MinMag=4.5      # Magnitud minima de los sismos
+# Fechas (año-mes-dia)
+Inicio=1901-01-01
+Fin=2022-10-31
 
-MAG="minmagnitude=5.5"  # Magnitud minima de los sismos
-#Magnitud minima=
-# Datos a modificar:
+# Crear URL
 SITE="https://earthquake.usgs.gov/fdsnws/event/1/query.csv"
-TIME="starttime=1901-01-01%2000:00:00&endtime=2021-12-31%2000:00:00"
+TIME="starttime=$Inicio%2000:00:00&endtime=$Fin%2000:00:00"
+REGION="minlongitude=$W&maxlongitude=$E&minlatitude=$S&maxlatitude=$N"
+URL="${SITE}?${TIME}&minmagnitude=$MinMag&"orderby=time-asc"&$REGION"
 
-#	Crear array (vector)
-#	IFS='/'; R=( $REGION )
-#ymin="minlatitude=${R[0]}"
-#ymax="maxlatitude=${R[1]}"
-#xmin="minlogitude=${R[2]}"
-##xmax="maxlongitude=${R[3]}"
-#echo $ymin
-
-ORDER="orderby=time-asc"
-ymin="minlatitude=-80"
-ymax="maxlatitude=50"
-xmin="minlongitude=-70"
-xmax="maxlongitude=-10"
-xmin="minlongitude=-100"
-xmax="maxlongitude=20"
-
-#inicio=
-#fin=
-
-# Se puede modificar??
-URL="${SITE}?${TIME}&${MAG}&${ORDER}&${xmin}&${xmax}&${ymin}&${ymax}"
-echo $URL > URL2.txt
-URL="https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime=2001-01-01%2000:00:00&endtime=2021-12-31%2000:00:00&minmagnitude=5&orderby=time-asc"
-echo $URL >> URL2.txt
-
-#rm query.csv
 # Descargar los datos y reformatearlos.
-gmt which ${URL} -G -Vq
-
-gmt info query.csv -h1 -i2,1,4,0
-
-#gmt convert ${URL} -i2,1,3,4,0 -hi1 > quakes.txt
+gmt convert ${URL} -i2,1,3,4,0 -hi1 > quakes.txt
 
 #wc quakes.txt
-#gmt info quakes.txt
-
+# Ver informacion de los datos
+gmt info quakes.txt
 #gmt begin USGS png
-
 #gmt plot quakes.txt -Sc0.05c -W0.1 -Gred -Baf -Rd -fg
-
 #gmt end 
 
 # 2. Descargar Mecanismos focales y reformatearlos

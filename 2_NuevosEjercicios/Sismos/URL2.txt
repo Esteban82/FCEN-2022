@@ -1,2 +1,0 @@
-https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime=1901-01-01%2000:00:00&endtime=2021-12-31%2000:00:00&minmagnitude=5.5&orderby=time-asc&minlongitude=-100&maxlongitude=20&minlatitude=-80&maxlatitude=50
-https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime=2001-01-01%2000:00:00&endtime=2021-12-31%2000:00:00&minmagnitude=5&orderby=time-asc

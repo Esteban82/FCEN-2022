@@ -19,8 +19,9 @@ clear
 
 #	Grillas
 	DEM=@earth_relief_15s
-	URL="https://topex.ucsd.edu/pub/global_grav_1min/grav_31.1.nc"
-	FAA=$(gmt which -G $URL) #Descarga el archivo y lo guarda con el nombre original
+	#URL="https://topex.ucsd.edu/pub/global_grav_1min/grav_31.1.nc"
+	#FAA=$(gmt which -G$URL) #Descarga el archivo y lo guarda con el nombre original
+	FAA=@earth_faa_01m
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc

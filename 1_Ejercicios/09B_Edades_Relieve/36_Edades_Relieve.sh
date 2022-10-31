@@ -14,11 +14,13 @@ clear
 
 #	Region y proyeccion
 	REGION=d
+#	REGION=AR+r2
+#	REGION=-66/-36/-66/-34
 	PROJ=W15c
 #	PROJ=G0/0/90/15c
 
 #	Resolucion Grilla
-	RES=05m
+	RES=05m_g
 
 # 	Nombre archivo de salida
 	SHADOW=tmp_$title-shadow.nc
@@ -36,17 +38,10 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	1. Mapa topografico de fondo
-#	----------------------------------------------------------
-#	Calcular sombreado
-	gmt grdgradient @earth_relief_$RES -A270 -G$SHADOW -Ne0.5
-
 #	Crear Imagen a partir de grilla de relieve con sombreado y cpt 
-	gmt grdimage @earth_relief_$RES -I -Cgeo
+	gmt grdimage @earth_relief -I -Cgeo
 
-#	----------------------------------------------------------
-
-#	2. Mapa con edades geologicas
+#	Mapa con edades geologicas
 #	----------------------------------------------------------
 #	Descargar CPT de CPT-City para escalas geologicas
 #	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_eons.cpt"
@@ -57,6 +52,12 @@ gmt begin $title png
 #	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GeeK07.cpt"
 	gmt which -G $URL 		#Descarga el archivo y lo guarda con el nombre original
     cpt=$(gmt which -G $URL)
+
+#	Descargar DEM para la region. Resolucion definida automaticamente.
+	gmt grdcut @earth_relief_$RES -Gtmp_cut.nc -R$REGION
+
+#	Sombreado a partir del DEM
+	gmt grdgradient tmp_cut.nc -Nt0.8 -A45 -G$SHADOW -R$REGION
 
 #   Crear Imagen a partir de grilla con sombreado y cpt con transparencia para zonas emergidas (-Q)
 	gmt grdimage @earth_age_$RES -C$cpt -Q -I$SHADOW

@@ -28,7 +28,8 @@ EOF
 # 2. Crear archivos para la animacion
 cat << 'EOF' > pre.sh
 gmt begin
-	gmt project -C$Inicio -E$Fin -G$Intervalo -Q | gmt mapproject -fg -AF -s3 > flight_path.txt 
+	gmt project -C$Inicio -E$Fin -G$Intervalo -Q > tmp_project
+	gmt mapproject tmp_project -fg -AF -s3 > flight_path.txt 
 	gmt image Fondo.jpg -Dx0/0+w24c -X0 -Y0
 gmt end
 EOF
@@ -44,4 +45,4 @@ gmt movie main.sh -Chd -N$title -Iinclude.sh -Tflight_path.txt -Sbpre.sh -H2 -Vi
 #	Ejercicios Sugeridos
 #	1. Cambiar los puntos de inicio y final.
 #	2. Cambiar la equidistancia (la cantidad de frames depende de esto).
-#	3. Cambiar al altura de vuelo.
+#	3. Cambiar la altura de vuelo.

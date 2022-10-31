@@ -19,8 +19,10 @@ clear
 
 #	Base de datos de GRILLAS
 	DEM=@earth_relief_$RES
-	URL="https://topex.ucsd.edu/pub/global_grav_1min/grav_31.1.nc"
-	FAA=$(gmt which -G $URL) #Descarga el archivo y lo guarda con el nombre original
+	GRD=@earth_faa_01m_p		# Free Air Anomalies
+#	GRD=@earth_vgg_01m_p		# Vertical Gravity Gradient
+#	GRD=@earth_mag4km_02m_p		# EMAG2 a 4 km de altitud
+#	GRD=@earth_geoid_01m_g		# Geoide 
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -47,7 +49,7 @@ gmt begin $title png
 
 #	Agrega columna (4) con datos extraidos de la grilla -G (altura) sobre el perfil
 #	gmt grdtrack tmp_track -G$DEM $REGION > tmp_data
-	gmt grdtrack tmp_track -G$DEM -G$FAA $REGION > tmp_data
+	gmt grdtrack tmp_track -G$DEM -G$GRD $REGION > tmp_data
 		
 #	Hacer Grafico y dibujar perfil
 #	-----------------------------------------------------------------------------------------------------------

@@ -10,3 +10,5 @@
 	echo "value = ${R[2]}"
 	echo "value = ${R[3]}"
 	echo -e '\a'
+
+# Ver TR para convertir el / a un separador estandar de ITF

@@ -74,7 +74,6 @@ gmt begin $title png
 #	Dibujar limite de hielos de la Antartida
 	gmt coast -A+aiS -Df -W1/faint,9/148/221
 
-
 #	Dibujar cuadricula del mapa
 	gmt basemap -Bg10 --MAP_GRID_PEN=18/151/221
 

@@ -7,7 +7,7 @@ clear
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=45_FAA_DEM
+	title=45_AireLibre_Dem
 	echo $title
 
 #	Region: Sudamerica y Atlantico Sur
@@ -17,11 +17,15 @@ clear
 #	Proyeccion Mercator (M)
 	PROJ=M15c
 
-#	Grillas
-	DEM=@earth_relief_15s
-	#URL="https://topex.ucsd.edu/pub/global_grav_1min/grav_31.1.nc"
-	#FAA=$(gmt which -G$URL) #Descarga el archivo y lo guarda con el nombre original
-	FAA=@earth_faa_01m
+# 	DEM topografico para efecto de sombreado
+	DEM=@earth_relief_15s_p		
+
+#	Grilla a graficar
+	GRD=@earth_faa_01m_p		# Free Air Anomalies
+#	GRD=@earth_vgg_01m_p		# Vertical Gravity Gradient
+#	GRD=@earth_mag4km_02m_p		# EMAG2 a 4 km de altitud
+#	GRD=@earth_geoid_01m_g		# Geoide 
+
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
@@ -42,11 +46,20 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	Crear Grilla para Sombreado (Hill-shaded). Definir azimuth del sol (-A)
-	gmt grdgradient $DEM -G$SHADOW -R$REGION -A270 -Ne0.8 
+#	Grilla para Sombreado a partir del DEM
+	gmt grdgradient $DEM -G$SHADOW -R$REGION -A270 -Ne0.8
 
-#	Crear grilla de FAA de mas detalle que Shadow y guardarlo como CUT
-	gmt grdsample $FAA -G$CUT -R$SHADOW 
+#	Recortar grilla
+	gmt grdcut $GRD -R$REGION -Gtmp_grd
+	
+#	Resamplear grilla  para que tenga la misma resolucion que el DEM
+	gmt grdsample tmp_grd -G$CUT -I15s		# Grillas con mismo registro
+#	gmt grdsample tmp_grd -G$CUT -I15s -T   # Grillas con distinto registro
+
+#	Ver informacion. Comparar valores para ver si las grillas coinciden. 	
+	gmt grdinfo $SHADOW -C
+	gmt grdinfo $SHADOW -Cn -o0,1,2,3,6,7,8,9
+	gmt grdinfo $CUT 	-Cn -o0,1,2,3,6,7,8,9
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------

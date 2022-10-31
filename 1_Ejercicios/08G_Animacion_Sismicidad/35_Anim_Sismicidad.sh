@@ -4,7 +4,7 @@ clear
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=35_Anim_Sismicidad
+	title=35_Sismicidad
 	echo $title
 
 #	Resolucion de la imagen/grilla del mapa base
@@ -47,7 +47,7 @@ gmt begin
 #	Crear Imagen a partir de grilla con sombreado
 	gmt grdimage @earth_relief_$RES -Cfondo.cpt -I+nt1.2
 
-#	Dibujar limites paises (Nborder[/pen])
+#	Dibujar limites paises
 	gmt coast -Df -N1/0.30
 
 #	Borde
@@ -107,10 +107,11 @@ EOF
 
 #	----------------------------------------------------------------------------------------------------------
 # 	3. Crear animacion. -C: Lienzo. -D: frames/sec. 
-	gmt movie main.sh -Sbpre.sh -C18cx22.5cx60 -Ttimes.txt -N$title -Ml,png -Zs -W -Fnone -D14 -Vi \
-	-Lc0+jTR+o0.4/0.4+g+hwhite+r --FONT_TAG=16p,Helvetica,black --FORMAT_CLOCK_MAP=- --FORMAT_DATE_MAP=o-yyyy --GMT_LANGUAGE=ES
+	gmt movie main.sh -Sbpre.sh -C18cx22.5cx60 -Ttimes.txt -N$title -Ml,png -Zs -W -D14 -Vi \
+	-Lc0+jTR+o0.4/0.4+s+gwhite+r --FONT_TAG=16p,Helvetica,black --FORMAT_CLOCK_MAP=- --FORMAT_DATE_MAP=o-yyyy \
+	--GMT_LANGUAGE=ES -Fmp4 
 
-#    rm q.txt
+    rm q.txt
 
 #   Suspender PC
 #	shutdown -h

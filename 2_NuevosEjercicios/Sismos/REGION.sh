@@ -11,14 +11,20 @@
 #	echo "value = ${R[3]}"
 #	echo -e '\a'
 
+
 # Ver TR para convertir el / a un separador estandar de ITF^
- 
- R=(echo "-79/-20/-63/-20" | tr '/' '\t')
- echo $REGION |tr '/' ' ' 		# Convertir / a espacios en blanco.
- echo $REGION | tr '/' '\t'		# Convertir / a tabulaciones.
+#unset IFS
+
+#IFS=' \t\n'
+ #R=( $(echo "-79/-20/-63/-20" | tr '/' '\t') )
+ R=( $(echo $REGION | tr '/' '\t'))
+ echo $R
+ #R=( $R )
+ #echo $REGION |tr '/' ' ' 		# Convertir / a espacios en blanco.
+ #echo $REGION | tr '/' '\t'		# Convertir / a tabulaciones.
 	#IFS='/'; R=( $REGION )
 	echo "value = ${R[0]}"
 	echo "value = ${R[1]}"
 	echo "value = ${R[2]}"
 	echo "value = ${R[3]}"
-	echo -e '\a'
+	#echo -e '\a'

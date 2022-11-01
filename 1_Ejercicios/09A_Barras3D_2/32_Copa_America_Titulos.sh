@@ -79,6 +79,16 @@ gmt begin $title png
 	gmt makecpt -Crainbow $T -F+c0-$Max -H 
 
 	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -i0,1,2,2 -C
+
+#	Dibujar Datos en Columnas Apiladas
+#	----------------------------------------------
+	gmt plot3d -p "CopaAmerica.csv" -So0.5c  -Gblue   -Wthinner -i0,1,2
+	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Ggreen  -Wthinner -i0,1,6,2
+	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Gyellow -Wthinner -i0,1,7,6
+	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Gred    -Wthinner -i0,1,8,7
+
+
+
 #	------------------------------------------------
 
 #	Escribir Numero

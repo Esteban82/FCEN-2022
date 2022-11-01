@@ -14,7 +14,8 @@
 # Ver TR para convertir el / a un separador estandar de ITF^
  
  R=(echo "-79/-20/-63/-20" | tr '/' '\t')
- cat $REGION | tr '/' '\t'
+ echo $REGION |tr '/' ' ' 		# Convertir / a espacios en blanco.
+ echo $REGION | tr '/' '\t'		# Convertir / a tabulaciones.
 	#IFS='/'; R=( $REGION )
 	echo "value = ${R[0]}"
 	echo "value = ${R[1]}"

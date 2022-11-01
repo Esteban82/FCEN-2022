@@ -3,28 +3,16 @@
 #	Region geografica del mapa (W/E/S/N)
 	REGION="-79/-20/-63/-20"
 
-#	Crear arregle	
-#	IFS='/'; R=( $REGION )
-#	echo "value = ${R[0]}"
-#	echo "value = ${R[1]}"
-#	echo "value = ${R[2]}"
-#	echo "value = ${R[3]}"
-#	echo -e '\a'
-
-
-# Ver TR para convertir el / a un separador estandar de ITF^
-#unset IFS
-
-#IFS=' \t\n'
- #R=( $(echo "-79/-20/-63/-20" | tr '/' '\t') )
+#	Convertir $REGION in un array (vector)
+#	Usar tr para convertir / a tabulaciones (valor de Internal Field Separator (IFS))
  R=( $(echo $REGION | tr '/' '\t'))
- echo $R
- #R=( $R )
+ #echo $R
  #echo $REGION |tr '/' ' ' 		# Convertir / a espacios en blanco.
  #echo $REGION | tr '/' '\t'		# Convertir / a tabulaciones.
-	#IFS='/'; R=( $REGION )
-	echo "value = ${R[0]}"
-	echo "value = ${R[1]}"
-	echo "value = ${R[2]}"
-	echo "value = ${R[3]}"
+
+#	Comprobar la conversion
+	echo "W = ${R[0]}"
+	echo "E = ${R[1]}"
+	echo "S = ${R[2]}"
+	echo "N = ${R[3]}"
 	#echo -e '\a'

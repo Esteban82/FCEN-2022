@@ -4,6 +4,7 @@
 #	1. Hacer perfil topografico.
 #	2. Proyectar datos (sismos) en el perfil.
 #	3. Graficar mecanismos focales en el perfil.
+#	4. Combinar dos perfiles en una figura.
 
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
@@ -22,8 +23,8 @@
 #	Coordendas iniciales (1) y finales del perfil (2)
 #	Long1=-74
 #	Lat1=-29
-	Lat1=-33.5
 	Long1=-75.02
+	Lat1=-33.5
 
 #	Long2=-64
 #	Lat2=-33
@@ -36,7 +37,7 @@
 	DepthMax=300
 
 #	Base de datos de GRILLAS
-	DEM=@earth_relief_$RES
+	DEM=@earth_relief_${RES}_g
 
 #	Parametros Generales
 #	-----------------------------------------------------------------------------------------------------------
@@ -51,19 +52,24 @@ gmt begin $title png
 
 #	Calcular largo (en km) del perfil y crear variable
 	KM=$(echo $Long1 $Lat1 | gmt mapproject -G$Long2/$Lat2+uk -o2)
+	echo $KM
 
 #	Grafico inferior (Longitud vs Profundidad) con sismos y mecanismos focales
 #	-----------------------------------------------------------------------------------------------------------
 #	Crear Grafico
 	gmt basemap -R0/$KM/$DepthMin/$DepthMax -JX$L/-$H1 -B+n
 
-#	Eje X (Sn) e Y
+#	Ejes X (Sn) e Y
 	gmt basemap -Bxaf+l"Distancia (km)" -Byaf+l"Profundidad (km)" -BwESn
 
 #	Filtrar Sismos y Mecanismos Focales por Region2
 #	********************************************************************
-#	Filtrar y Proyectar los Sismos al perfil/circulo maximo
-	gmt project Datos/query_*.csv -h1 -i2,1,3 -C$Long1/$Lat1 -E$Long2/$Lat2 -W-$Dist_Perfil/${Dist_Perfil}k -Lw -S -Q > "tmp_sismos_project" 
+#	Filtrar y Proyectar los Sismos al perfil/circulo maximo. 
+#		-W: Distancia hacia los costados. 
+#		-Lw: Solo incluye datos hacia los costados. 
+#		-Q: Datos de -C y -E en coordenadas geograficas
+#		-S: Ordena los datos. 
+	gmt project Datos/query_*.csv -h1 -i2,1,3 -C$Long1/$Lat1 -E$Long2/$Lat2 -Q -W-$Dist_Perfil/${Dist_Perfil}k -Lw -S > "tmp_sismos_project" 
 
 #	Crear paleta de colores para magnitud de sismos
 	gmt makecpt -Crainbow -T$DepthMin/$DepthMax -I
@@ -71,8 +77,10 @@ gmt begin $title png
 #	Plotear Sismos en perfil distancia vs profundidad
 	gmt plot "tmp_sismos_project" -C -Sc0.05c -i3,2,2
 
-#	Plotear Mecanismos Focales
-	gmt coupe Mecanismos_Focales/CMT_* -Sd0.15/0 -Gred -M -Aa$Long1/$Lat1/$Long2/$Lat2+w$Dist_Perfil+z$DepthMin/$DepthMax -Q
+#	Plotear Mecanismos Focales en un perfil
+#	-Aa: Definir perfil
+#	-Q: NO produce archivos de informacion.
+	gmt coupe Mecanismos_Focales/CMT_* -Sd0.15/0 -Gred -M -Aa$Long1/$Lat1/$Long2/$Lat2+w$Dist_Perfil+z$DepthMin/$DepthMax
 
 #	*********************************************************************************************************
 #	GRAFICO SUPERIOR
@@ -88,7 +96,8 @@ gmt begin $title png
 
 #	Crear variable con region geografica del perfil
 	REGION=$(gmt info tmp_sample1d -I+e0.1)
-	
+	echo $REGION
+
 #	Distancia: Agrega columna (3a) con distancia del perfil en km (-G+uk)
 	gmt mapproject tmp_sample1d -G+uk > tmp_track
 
@@ -101,10 +110,12 @@ gmt begin $title png
 	#Min=-6200
 	#Max=5300
 
+#	Obtener minimo y maximo (en la terminal)
 #	gmt info tmp_data -C -o6
 #	gmt info tmp_data -C -i3 -o0
 #	gmt info tmp_data -C -i3+d1000 -o0
 
+#	Crear variables con minimo y maximo (valores dividos por 1000)
 	Min=$(gmt info tmp_data -C -i3+d1000 -o0)
 	Max=$(gmt info tmp_data -C -i3+d1000 -o1)
 	
@@ -125,4 +136,4 @@ gmt begin $title png
 #	Cerrar la sesion y mostrar archivo
 gmt end
 
-	rm tmp_* gmt.*
+#	rm tmp_* gmt.*

@@ -69,16 +69,9 @@ gmt begin $title png
 #	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -Gred
 #	gmt plot3d -p "CopaAmerica.csv" -So0.7c -Wthinner -Gred
 
-#	Dibujar Datos en Columnas (o) con color variable
-#	------------------------------------------------
-#	Crear CPT con info previa (-ilong,lat,altura,valor para el color)
-	gmt makecpt -Crainbow $T
-	gmt makecpt -Crainbow $T -H 
+#	Calcular columnas apiladas
+	'{print $1, $2, $3+$4+$5+$6+$7, $3+$4+$5+$6}'
 
-	gmt makecpt -Crainbow $T -F+c0-$Max
-	gmt makecpt -Crainbow $T -F+c0-$Max -H 
-
-	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -i0,1,2,2 -C
 
 #	Dibujar Datos en Columnas Apiladas
 #	----------------------------------------------
@@ -86,7 +79,6 @@ gmt begin $title png
 	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Ggreen  -Wthinner -i0,1,6,2
 	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Gyellow -Wthinner -i0,1,7,6
 	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Gred    -Wthinner -i0,1,8,7
-
 
 
 #	------------------------------------------------

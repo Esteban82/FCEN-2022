@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#	Temas a ver
+#	1. Extraer datos de una grilla para su analisis.
+#	2. Trabajar con datos binarios (para mayor velocidad de procesamiento).
+#	3. Hacer histograma rotado y con colores
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -24,8 +29,6 @@
 	
 #	Dimensiones y tipo de graficos y rango de alturas
 	PROJ=X15c/10c
-	MIN=-11000
-	MAX=8500
 
 #	Binario (h: 2-byte signed int. f: 4-byte single-precision float).
 	BIN=1h,1f
@@ -65,18 +68,17 @@ gmt begin $title png
 	gmt histogram "tmp_datos" -bi$BIN -I -Z$Z+w -T$T
 	MIN=$(gmt histogram "tmp_datos" -bi$BIN -Z$Z+w -T$T -I -o0)
 	MAX=$(gmt histogram "tmp_datos" -bi$BIN -Z$Z+w -T$T -I -o1)
-	
+
 #	Crear CPT para los colores
-	gmt makecpt -Cabyss -T$MIN/0  -N -H >  $color
-	gmt makecpt -Cdem2  -T0/$MAX     -H >> $color
+	gmt makecpt -Cgeo -T$MIN/$MAX
 
 #	Curva Hipsometrica
 #	--------------------------------------------------------------
 #	Redefinir Parametros
 	gmt set	MAP_FRAME_AXES WS
 
-#	Ejes de anotaciones X,Y
-	gmt histogram "tmp_datos" -bi$BIN -J$PROJ -A -C$color -T$T -Z$Z+w -Bxafg+l"Elevaciones (m)" -Byaf+l"Frecuencia Altim\351trica (\045)"
+#	Histrograma rotado (-A). Datos ponderados (+w).
+	gmt histogram "tmp_datos" -bi$BIN -J$PROJ -A -C -T$T -Z$Z+w -Bxafg+l"Elevaciones (m)" -Byaf+l"Frecuencia Altim\351trica (\045)"
 
 #	Curva Hipsometrica Acumulada
 #	-----------------------------------------------------------------------------------------------------------
@@ -85,13 +87,9 @@ gmt begin $title png
 	gmt set	MAP_FRAME_AXES EN
 	gmt set	FONT_LABEL 10p,19,Blue
 
-#	Dibujar Curva Hipsometrica
+#	Dibujar Curva Hipsometrica (-S)
 #	gmt histogram "tmp_datos" -bi$BIN -J$PROJ -R$DOMINIO -A -F -Z$Z+w -T1 -S -Wthinner -Byaf+l"Frecuencia Acumulada (\045)" -B+t"An\341lisis Hipsom\351trico" -Q
 	gmt histogram "tmp_datos" -bi$BIN -J$PROJ -R$DOMINIO -A -F -Z$Z+w -T1 -S -Wthinner -Byaf+l"Frecuencia Acumulada (\045)" -B+t"An\341lisis Hipsom\351trico" -Qr
-
-#	----------------------------------------------
-#	Recuadro Figura
-	#gmt basemap -B0 -Bwesn
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)

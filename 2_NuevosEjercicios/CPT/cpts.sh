@@ -20,18 +20,18 @@ B	black
 F	white
 END
 
-#gmt colorbar -Cages.cpt  -Dx00/13+w-8/0.5+jML+ef
-#gmt colorbar -Cages.cpt  -Dx04/13+w-8/0.5+jML+ef -L
-#gmt colorbar -Cages.cpt  -Dx08/13+w-8/0.5+jML+ef -L0.0
-#gmt colorbar -Cages.cpt  -Dx12/13+w-8/0.5+jML+ef -L0.1
-#gmt colorbar -Cages.cpt  -Dx16/13+w08/0.5+jML+ef -L
-#gmt colorbar -Cages.cpt  -Dx20/13+w08/0.5+jML+ef -L0.1
+gmt colorbar -Cages.cpt  -Dx00/13+w-8/0.5+jML+ef
+gmt colorbar -Cages.cpt  -Dx04/13+w-8/0.5+jML+ef -L
+gmt colorbar -Cages.cpt  -Dx08/13+w-8/0.5+jML+ef -L0.0
+gmt colorbar -Cages.cpt  -Dx12/13+w-8/0.5+jML+ef -L0.1
+gmt colorbar -Cages.cpt  -Dx16/13+w08/0.5+jML+ef -L
+gmt colorbar -Cages.cpt  -Dx20/13+w08/0.5+jML+ef -L0.1
 
 sed 's/;.*$//' ages.cpt > years.cpt
-#gmt colorbar -Cyears.cpt -Dx00/04+w08/0.5+jML+ef
-#gmt colorbar -Cyears.cpt -Dx04/04+w-8/0.5+jML+ef -L
+gmt colorbar -Cyears.cpt -Dx00/04+w08/0.5+jML+ef
+gmt colorbar -Cyears.cpt -Dx04/04+w-8/0.5+jML+ef -L
 gmt colorbar -Cyears.cpt -Dx08/04+w-8/0.5+jML+ef -L0.0 -Sx+l"cantidad"
 gmt colorbar -Cyears.cpt -Dx12/04+w-8/0.5+jML+ef -L0.1
-#gmt colorbar -Cyears.cpt -Dx16/04+w-8/0.5+jML+ef -Li
-#gmt colorbar -Cyears.cpt -Dx20/04+w-8/0.5+jML+ef -Li0.1
+gmt colorbar -Cyears.cpt -Dx16/04+w-8/0.5+jML+ef -Li
+gmt colorbar -Cyears.cpt -Dx20/04+w-8/0.5+jML+ef -Li0.1
 gmt end show

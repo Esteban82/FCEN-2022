@@ -31,10 +31,11 @@
 	Long2=-63.5
 	Lat2=-31
 
-#	Distancia perpendicular al pefil (en km) y rango de profundidades del perfil (en km)
-	Dist_Perfil=100
+#	Distancia perpendicular al perfil (en km) y rango de profundidades del perfil (en km)
+	Dist_Perfil=500
 	DepthMin=0
 	DepthMax=300
+#	DepthMax=400
 
 #	Base de datos de GRILLAS
 	DEM=@earth_relief_${RES}_g
@@ -80,7 +81,7 @@ gmt begin $title png
 #	Plotear Mecanismos Focales en un perfil
 #	-Aa: Definir perfil
 #	-Q: NO produce archivos de informacion.
-	gmt coupe Mecanismos_Focales/CMT_* -Sd0.15/0 -Gred -M -Aa$Long1/$Lat1/$Long2/$Lat2+w$Dist_Perfil+z$DepthMin/$DepthMax
+	gmt coupe Mecanismos_Focales/CMT_* -Sd0.15/0 -Gred -M -Aa$Long1/$Lat1/$Long2/$Lat2+w$Dist_Perfil+z$DepthMin/$DepthMax -Q
 
 #	*********************************************************************************************************
 #	GRAFICO SUPERIOR
@@ -106,9 +107,9 @@ gmt begin $title png
 
 #	Datos para el perfil:
 #	-------------------------------------------------
-#	Altura (m) minima y maxima:
-	#Min=-6200
-	#Max=5300
+#	Altura (km) minima y maxima:
+#	Min=-6.2
+#	Max=5.3
 
 #	Obtener minimo y maximo (en la terminal)
 #	gmt info tmp_data -C -o6

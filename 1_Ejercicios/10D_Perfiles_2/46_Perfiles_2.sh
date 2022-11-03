@@ -18,7 +18,7 @@ clear
 	RES=01m
 
 #	Base de datos de GRILLAS
-	DEM=@earth_relief_$RES
+	DEM=@earth_relief_${RES}_p
 	GRD=@earth_faa_01m_p		# Free Air Anomalies
 #	GRD=@earth_vgg_01m_p		# Vertical Gravity Gradient
 #	GRD=@earth_mag4km_02m_p		# EMAG2 a 4 km de altitud
@@ -59,7 +59,6 @@ gmt begin $title png
 #	Datos para el perfil:
 #	-------------------------------------------------
 #	Distancia del Perfil (km):
-#	KM=2825.5
 	KM=$(gmt info tmp_data -C -o5)
 
 #	Altura (m) minima y maxima:
@@ -85,7 +84,7 @@ gmt begin $title png
 #	Dibujar Ejes de datos
 	gmt basemap -R0/$KM/$Topo -Byag+l"Elevaciones (m)"              -BW --FONT_ANNOT_PRIMARY=8,Helvetica,blue
 	gmt basemap -R0/$KM/$Grav -Bya+l"Anomal\355a Aire Libre (mGal)" -BE --FONT_ANNOT_PRIMARY=8,Helvetica,red
-	
+
 #	Coordenadas Perfil (E, O)
 	echo O | gmt text -F+cTL+f14p -Gwhite -W1
 	echo E | gmt text -F+cTR+f14p -Gwhite -W1
@@ -95,3 +94,6 @@ gmt begin $title png
 gmt end
 
 	rm tmp_*
+
+#	Ejercicios sugeridos
+#	1. 

@@ -8,7 +8,7 @@ clear
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=32_Copa_America_Titulos
+	title=50_Copa_America_Titulos
 	echo $title
 
 #	Region: Cuyo

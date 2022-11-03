@@ -18,8 +18,9 @@
 #	Calcular distancia proyectada al polos sur (0 -90)
 	S=$(echo 0 -90 | gmt mapproject -Rg -J$PROJ -C -Fk -o1)
 
-#	Region geografica del mapa (W/E/S/N) d=-180/180/-90/90 g=0/360/-90/90
+#	Region geografica del mapa (W/E/S/N)
 	REGION=-2400/3100/${S}/2100+uk
+#	REGION=500+uk
 
 #	Parametros por Defecto
 #	-----------------------------------------------------------------------------------------------------------
@@ -33,7 +34,7 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	gmt coast -A+agS -Df -Sp62
+	gmt coast -A+agS -Df -Sp62
 
 #	Pintar areas secas (-G). Usar linea de costa para Antartida (-A+ag) en lugar de frente de hielo.
 #	gmt coast -Df -G245/241/214 -S199/224/246 			# Antartida con costa segun frente de hielo.
@@ -46,7 +47,7 @@ gmt begin $title png
 	gmt spatial IGN/Plataforma_Americana.txt -Sh | gmt plot -G162/192/232	# Spatial reformatea al archivo para respetarlas.
 
 #	Pintar Pais
- 	gmt plot "IGN/pais.shp" -Gwhite
+	gmt plot "IGN/pais.shp" -Gwhite
 
 #	Dibujar Linea de Costa 
 	gmt coast -Df -A+ag -W1/faint,9/148/221

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#	Temas a ver:
+#	1. Definir region en base a distancias.
+#	2. Graficar poligonos con agujeros (donuts)
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -32,13 +36,13 @@ gmt begin $title png
 #	gmt coast -A+agS -Df -Sp62
 
 #	Pintar areas secas (-G). Usar linea de costa para Antartida (-A+ag) en lugar de frente de hielo.
-#	gmt coast -Df -G245/241/214 -S199/224/246 		# Antartida con costa segun frente de hielo.
-	gmt coast -Df -G245/241/214 -S199/224/246 -A+ag		# Antartida con costa segun costa. 
+#	gmt coast -Df -G245/241/214 -S199/224/246 			# Antartida con costa segun frente de hielo.
+	gmt coast -Df -G245/241/214 -S199/224/246 -A+ag		# Antartida con costa segun tierra-agua. 
 
-#   	Plataforma Continental Antartica y Americana
+#   Plataforma Continental Antartica y Americana
 	gmt plot "IGN/Plataforma_Antartida.txt" -G162/192/232
 
-#	gmt plot IGN/Plataforma_Americana.txt  -G162/192/232			# Error. Tapa las islas
+#	gmt plot IGN/Plataforma_Americana.txt  -G162/192/232					# Error. Tapa las islas
 	gmt spatial IGN/Plataforma_Americana.txt -Sh | gmt plot -G162/192/232	# Spatial reformatea al archivo para respetarlas.
 
 #	Pintar Pais

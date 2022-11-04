@@ -13,7 +13,6 @@ clear
 
 #	Region: Cuyo
 	REGION=-85/-33/-58/15
-#	REGION3D=$REGION/0/15
 
 #	Proyeccion Mercator (M)
 	PROJ=M15c
@@ -24,7 +23,6 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 #	Sub-seccion FUENTE
 	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
-	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,red
 	gmt set FONT_LABEL 8,Helvetica,black
 
 #	Sub-seccion FORMATO
@@ -58,38 +56,18 @@ gmt begin $title png
 	gmt coast -p -G200 -Sdodgerblue2 -N1
 
 #	Titulo
-	gmt basemap -p -B+t"Copas Am\351ricas Ganadas"
+	gmt basemap -p -B+t"Copas Am\351ricas"
 
 #	Dibujar Eje X,Y,Z
-	gmt basemap -p -BWSneZ -Bxf -Byf -Bzafg+l"Cantidad"
-
-#	Dibujar Columnas
-#	--------------------------------------------------------------------------
-#	Dibujar Datos en Columnas (o) con color fijo. -So: base de la columna
-#	gmt plot3d -p "CopaAmerica.csv" -So0.5c -Wthinner -Gred
-#	gmt plot3d -p "CopaAmerica.csv" -So0.7c -Wthinner -Gred
-
-#	Calcular columnas apiladas
-	'{print $1, $2, $3+$4+$5+$6+$7, $3+$4+$5+$6}'
-
+	gmt basemap -p -BWSneZ -Bxf -Byf -Bzafg
 
 #	Dibujar Datos en Columnas Apiladas
 #	----------------------------------------------
-	gmt plot3d -p "CopaAmerica.csv" -So0.5c  -Gblue   -Wthinner -i0,1,2
-	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Ggreen  -Wthinner -i0,1,6,2
-	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Gyellow -Wthinner -i0,1,7,6
-	gmt plot3d -p "CopaAmerica.csv" -So0.5cb -Gred    -Wthinner -i0,1,8,7
-
-
+	gmt makecpt -Cblue,green,yellow,red -T0,1,2,3,4
+	gmt plot3d -p "CopaAmerica.csv" -SO0.5c+Z4 -C -Wthinner
 #	------------------------------------------------
-
-#	Escribir Numero
-	gmt convert "CopaAmerica.csv" -o0,1,2 | gmt text -p -Gwhite@30 -D0/-0.8c -F+f20p,Helvetica-Bold,firebrick=thinner+jCM
-#	gmt convert "CopaAmerica.csv" -o0,1,2 | gmt text -p -Gwhite@30 -D0/-0.8c -F+f20p,Helvetica-Bold,firebrick=thinner,green+jCM
-
-#	Dibujar escala vertical
-	gmt colorbar -p -C -DJRM+o0.3c/0+w13/0.618c -L0.2 -S+x"Cantidad"
-
+	gmt legend -JZ -DjLB+o0.5c+w3.5c/0+jBL --FONT=Helvetica-Bold \
+		-F+glightgrey+pthinner+s-4p/-6p/grey20@40 -p legend_10.txt
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
 gmt end

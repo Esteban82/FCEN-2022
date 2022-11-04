@@ -18,7 +18,7 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
-	gmt subplot begin 2x3 -M0.1c -Fs8c/0 -R-0.2/6.6/-0.2/6.6 -Jx1c -Scb -Srl+t -Bwesn -T"Grlllar datos"
+	gmt subplot begin 2x3 -M0.5c -Fs8c/0 -R-0.2/6.6/-0.2/6.6 -Jx1c -Scb -Srl+t -Bwesn -T"Grlllar datos"
 		gmt plot @Table_5_11.txt -Sc0.12c -Gblack -B+t"Datos originales" -c
 		gmt text @Table_5_11.txt -D3p/0 -F+f6p+jLM -N
 		#
@@ -45,4 +45,9 @@ gmt begin $title png
 	gmt subplot end
 gmt end
 
+#	Borrar temporales
 rm tmp_*
+
+# Ejercicios sugeridos
+# 1. Cambiar la configuración de los subgraficos (2x3) a 3x2, 6x1, 1x6 (linea 21).
+# 2. Modificar el margen de los subgraficos (-M)

@@ -4,7 +4,8 @@ Title=47_Provincias
 cat << EOF > pre.sh
 gmt begin
 #    gmt coast -E=SA+l > $Title
-    gmt coast -EAR+L  > $Title
+#    gmt coast -E+n > $Title
+   gmt coast -EAR+L  > $Title
 gmt end
 EOF
 # 2. Crear cada imagen
@@ -17,10 +18,11 @@ gmt end
 EOF
 # 3. Combinar todos los pdf en un unico archivo.
 cat << EOF > post.sh
-gs -dQUIET -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=\${BATCH_PREFIX}.pdf -dBATCH \${BATCH_PREFIX}_*.pdf
+gmt psconvert -F\${BATCH_PREFIX} -TF \${BATCH_PREFIX}_*.pdf
 rm -f \${BATCH_PREFIX}_*.pdf
 EOF
 
 # 4. Ejecutar tarea
-gmt batch main.sh -Sbpre.sh -Sfpost.sh -T$Title+w"\t" -N$Title -W -V -Z
+gmt batch main.sh -Sbpre.sh -Sfpost.sh -T$Title+w"\t" -N$Title -V -Zs -W
 
+rm ${Title}_*.pdf

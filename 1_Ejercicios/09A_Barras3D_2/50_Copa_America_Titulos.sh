@@ -12,7 +12,7 @@ clear
 
 #	Region: Cuyo
 	REGION=-85/-33/-58/15
-	Z=40
+	Z=36
 
 #	Proyeccion Mercator (M)
 	PROJ=M15c

@@ -9,7 +9,7 @@
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=41_Perfil_2
+	title=41_Perfil_Wadati-Benioff
 	echo $title
 	
 #	Resolucion de la imagen/grilla del mapa base

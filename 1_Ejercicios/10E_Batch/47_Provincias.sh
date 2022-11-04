@@ -16,9 +16,9 @@ gmt begin \${BATCH_NAME} pdf #,png
     echo \${BATCH_WORD0} | gmt text -F+f16p+jTL+cTL -Gwhite -W1p
 gmt end
 EOF
-# 3. Combinar todos los pdf en un unico archivo.
+# 3. Combinar todos los pdf en un unico archivo y borrar archivos individuales
 cat << EOF > post.sh
-gmt psconvert -F\${BATCH_PREFIX} -TF \${BATCH_PREFIX}_*.pdf
+gmt psconvert -TF \${BATCH_PREFIX}_*.pdf -F\${BATCH_PREFIX}
 rm -f \${BATCH_PREFIX}_*.pdf
 EOF
 

@@ -5,7 +5,7 @@ clear
 #	1. Dibujar columnas en 3D
 #	2. Definir colorbar con %.
 
-#	Definir Variables del mapaS
+#	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
 	title=49_Sismicidad3D
@@ -14,8 +14,10 @@ clear
 #	Region: Cuyo
 	REGION=-80/-53/-40/-20
 #	REGION=-74/-64/-36/-28
+#	REGION=-74/-64/-36/-28
+#	REGION=-69/-68/-34/-33
 
-#	Resolucion de la grilla de densidades (heatmap)S
+#	Resolucion de la grilla de densidades (heatmap)
 	res=10k
 	Max=100
 
@@ -63,7 +65,6 @@ gmt begin $title png
 #	Dibujar Eje X,Y,Z
 	gmt basemap -p -BWSneZ -Bxf -Byf -Bz+l"Sismos cada 100 km@+2@+" 
 
-
 #	Procesar Sismos
 #	-----------------------------------------------------------------------------------------------------------
 #	Combinar datos y crear tabla de datos
@@ -73,12 +74,8 @@ gmt begin $title png
 #	--------------------------------------------------------------------------
 	gmt makecpt -Chot -Di -T0/$Max
 	
-#	gmt plot3d -p $OUT -So0.03u
-	gmt plot3d -p $OUT -So0.03u -C -i0:2,2 -Vi
-#	gmt plot3d -p $OUT -So0.03u -C -i0:2,2 -t50
-#	gmt plot3d -p $OUT -So0.02u -C -i0:2,2 #-t50
-	
-#	gmt plot3d -p $OUT -So0.0833333ub0 -C -i0:2,2 -t50
+#	Ancho de 6 minuntos de arco (6/60=0.1u, ca. 10 km)
+	gmt plot3d -p $OUT -So0.1u -C -i0:2,2 -t50
 
 #	------------------------------------------------
 #	Dibujar escala vertical
@@ -89,4 +86,7 @@ gmt begin $title png
 gmt end
 
 #	Borrar archivos temporales
-rm gmt.*
+# 	rm gmt.*
+
+# Ejercicios sugeridos
+# 1. Cambiar el % de la escala de color.

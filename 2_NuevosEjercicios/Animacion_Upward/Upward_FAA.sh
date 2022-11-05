@@ -18,12 +18,10 @@ gmt begin $title png
 	gmt grdcut @earth_faa_02m_p -R$REGION -G$DEM
 
 #	Upward Continuation
-	#gmt grdfft $DEM -C$Z -G$CUT -fg -R$REGION
 	gmt grdfft $DEM -C800 -G$CUT
 
 	gmt grd2cpt $DEM -Z
 
-#	gmt grdgradient $CUT -A0/270 -G$SHADOW -Ne0.5
 	gmt grdimage $CUT -C -I
 
    	gmt colorbar -DJMR+0/0.2c+w95%/0.618c+e -C -Ba+l"Anomal\355as Aire Libre (mGal)" -I
@@ -31,7 +29,7 @@ gmt begin $title png
 	gmt coast -Dl -W1/thinner
 	gmt coast -Dl -N1
 	gmt grdcontour $CUT -C50 -Wblack,- -A100 -GLZ-/Z+
-	gmt basemap -Byaf -Bxaf -BWSne
+	gmt basemap -Byf -Bxf -BWSne
 
 	gmt basemap -Ln0.15/0.075+c+w800k+f+l
 

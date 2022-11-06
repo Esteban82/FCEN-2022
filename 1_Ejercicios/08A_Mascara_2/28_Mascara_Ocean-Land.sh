@@ -16,13 +16,11 @@ clear
 	PROJ=M15c
 
 #	Resolucion de la grilla
-#	RES=15s
-	RES=02m
+	RES=01m
 
 #	Base de datos de GRILLAS
 	#DEM=@earth_relief_$RES
 	DEM=@earth_faa_$RES
-    SAT=@earth_day_$RES
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
@@ -30,29 +28,12 @@ clear
 	MASK=tmp_$title-2.nc
 	CLIP=tmp_clip.txt
 
-#	Parametros Generales
-#	-----------------------------------------------------------------------------------------------------------
-#	Sub-seccion FUENTE
-	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
-	gmt set FONT_LABEL 8,Helvetica,black
-
-#	Sub-seccion FORMATO
-	gmt set FORMAT_GEO_MAP ddd:mm:ssF
-
-#	Sub-seccion GMT
-	gmt set GMT_VERBOSE w
-
 #	Iniciar sesion y tipo de figura
 #	-----------------------------------------------------------------------------------------------------------
-#	Abrir archivo de salida (ps)
 gmt begin $title png
 
 #	Setear la region y proyeccion (y no se dibuja nada)
-	gmt basemap -R$REGION -J$PROJ -B+n	
-
-#	Agregar imagan/grilla de fondo
-#	gmt grdimage $SAT
-#	gmt grdimage $DEM -I -Cwhite
+	gmt basemap -R$REGION  -J$PROJ -B+n	
 
 #	Crear grilla
 #	-------------------------------------------------------------
@@ -60,7 +41,7 @@ gmt begin $title png
 	gmt grdcut $DEM -G$CUT1 -R$REGION
 
 #	Crear Mascara Oceano-Tierra
-	gmt grdlandmask -R$CUT1 -Dh -G$MASK -N1/NaN -V
+	gmt grdlandmask -R$CUT1 -Dh -G$MASK -N1/NaN -I$RES
 
 #	Recortar 
 	gmt grdmath $CUT1 $MASK MUL = $CUT

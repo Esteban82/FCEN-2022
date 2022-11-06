@@ -70,7 +70,3 @@ gmt begin $title png
 gmt end # show
 
 	rm tmp_* gmt.*
-
-#	Ejercicios sugeridos
-#	1. Probar otros poligonos.
-#	2. Invertir la mascara. 

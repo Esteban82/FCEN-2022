@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Temas a ver:
+# 1. 
+
 #	Variables del Mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo de la figura
@@ -99,4 +102,4 @@
 #	Cerrar la sesion y mostrar archivo
 gmt end
 
-	rm temp_* gmt.*
+	rm tmp_* gmt.*

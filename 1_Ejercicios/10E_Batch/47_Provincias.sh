@@ -8,9 +8,9 @@ Title=47_Provincias
 # 1. Crear lista de paises, territorios, provincias.
 cat << EOF > pre.sh
 gmt begin
-#    gmt coast -E=SA+l > $Title
-#    gmt coast -E+n > $Title
-   gmt coast -EAR+L  > $Title
+#   gmt coast -E=SA+l > $Title
+#   gmt coast -E+n > $Title
+    gmt coast -EAR+L  > $Title
 gmt end
 EOF
 # 2. Crear cada imagen.

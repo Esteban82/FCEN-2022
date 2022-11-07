@@ -26,7 +26,6 @@ clear
 #	GRD=@earth_mag4km_02m_p		# EMAG2 a 4 km de altitud
 #	GRD=@earth_geoid_01m_g		# Geoide 
 
-
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
 	SHADOW=tmp_$title-shadow.nc

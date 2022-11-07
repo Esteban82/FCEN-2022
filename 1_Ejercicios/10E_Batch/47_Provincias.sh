@@ -8,8 +8,9 @@ Title=47_Provincias
 # 1. Crear lista de paises, territorios, provincias.
 cat << EOF > pre.sh
 gmt begin
-#    gmt coast -E=SA+l > $Title      # Lista de Paises de Sudamerica.
-   gmt coast -EAR+L  > $Title      # Lista de Provincias de Argentina.
+#    gmt coast -E=SA+l > $Title
+#    gmt coast -E+n > $Title
+   gmt coast -EAR+L  > $Title
 gmt end
 EOF
 # 2. Crear cada imagen.
@@ -20,19 +21,13 @@ gmt begin \${BATCH_NAME} pdf #,png
     echo \${BATCH_WORD0} | gmt text -F+f16p+jTL+cTL -Gwhite -W1p
 gmt end
 EOF
-# 3. Combinar todos los pdf en un unico archivo.
+# 3. Combinar todos los pdf en un unico archivo y borrar archivos individuales
 cat << EOF > post.sh
-gs -dQUIET -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=\${BATCH_PREFIX}.pdf -dBATCH \${BATCH_PREFIX}_*.pdf
-#rm -f \${BATCH_PREFIX}_*.pdf
+gmt psconvert -TF \${BATCH_PREFIX}_*.pdf -F\${BATCH_PREFIX}
+rm -f \${BATCH_PREFIX}_*.pdf
 EOF
 
 # 4. Ejecutar tarea
-gmt batch main.sh -Sbpre.sh -Sfpost.sh -T$Title+w"\t" -N$Title -V -Zs
+gmt batch main.sh -Sbpre.sh -Sfpost.sh -T$Title+w"\t" -N$Title -V -Zs -W
 
-# Borrar directorio con archivos internos
-rm -r $Title
-
-# Ejercicios sugeridos
-# 1. Crear archivos en formato png (agregar png en linea 15).
-# 2. No borrar archivos pdf (comentar linea 24).
-# 3. Usar la liste de los paises de sudamerica (usar linea 9).
+rm ${Title}_*.pdf

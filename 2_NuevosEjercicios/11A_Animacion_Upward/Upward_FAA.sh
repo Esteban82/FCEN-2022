@@ -5,7 +5,7 @@ clear
 title=FAA_Upward
 Z=400
 REGION=-78/-18/-60/-20
-PROJ=M15c
+PROJ=M20c
 FAA=@earth_faa_01m_p
 DEM=tmp_faa.nc
 CUT=tmp_faa_U.nc
@@ -60,4 +60,4 @@ gmt begin $title png
 gmt end
 
 #	Borrar Temporales
- rm tmp_* gmt.*
+# rm tmp_* gmt.*

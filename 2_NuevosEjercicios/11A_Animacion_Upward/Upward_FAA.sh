@@ -2,7 +2,7 @@
 clear
 
 #	Titulo de la animación
-title=FAA_Upward
+title=Upward_FAA
 Z=400
 REGION=-78/-18/-60/-20
 PROJ=M20c

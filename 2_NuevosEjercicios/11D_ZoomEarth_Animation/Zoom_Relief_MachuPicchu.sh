@@ -5,9 +5,9 @@ dpc=100
 
 cat << EOF > pre.sh
 gmt begin
-	gmt math -T1/4/720+n 10 T POW -o1 -I = altitude.txt
-#	gmt math -T1/4/72+n 10 T POW -o1 -I = altitude.txt
-#	gmt math -T1/4/20+n 10 T POW -o1 -I = altitude.txt
+	gmt math -T1/4/720+n 10 T POW -o1 -I = z
+#	gmt math -T1/4/72+n 10 T POW -o1 -I = z
+#	gmt math -T1/4/20+n 10 T POW -o1 -I = z
 	gmt makecpt -Cgeo -H > topo.cpt
 gmt end
 EOF
@@ -20,4 +20,5 @@ gmt begin
 #	echo "altitude = \${MOVIE_COL0} L = \${L}"
 gmt end
 EOF
-gmt movie main.sh -Sbpre.sh -NZoom_Relief -Taltitude.txt -C15cx15cx100 -D36 -H8 -M0,png -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Gblack -Fmp4
+gmt movie main.sh -Sbpre.sh -NZoom_Relief -Tz -C15cx15cx100 -D36 -H8 -M0,png \
+    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Gblack -Fmp4

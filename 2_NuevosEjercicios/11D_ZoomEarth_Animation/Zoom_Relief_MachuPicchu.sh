@@ -11,8 +11,8 @@ dpc=100
 
 cat << EOF > pre.sh
 gmt begin
-	gmt math -T1/4/720+n 10 T POW -o1 -I = z
-#	gmt math -T1/4/20+n 10 T POW -o1 -I = z
+#	gmt math -T1/4/720+n 10 T POW -o1 -I = z
+	gmt math -T1/4/20+n 10 T POW -o1 -I = z
 	gmt makecpt -Cgeo -H > topo.cpt
 gmt end
 EOF
@@ -23,4 +23,4 @@ gmt begin
 gmt end
 EOF
 gmt movie main.sh -Sbpre.sh -N$title -Tz -C15cx15cx100 -D36 -H8 -M0,png \
-    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Zs #-Gblack -Fmp4
+    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Zs -Gblack #-Fmp4

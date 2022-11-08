@@ -65,6 +65,8 @@ gmt begin
 
 	echo $MOVIE_COL0 m | gmt text -F+cTR+jTR+f18p -Dj0.1i -Gwhite -W0.25p
 #	printf "%s -2.6\n%s 2.8\n" ${MOVIE_COL0} ${MOVIE_COL0} | gmt plot -W0.5p
+gmt movie main.sh -Sbpre.sh -N$title -Tz -C15cx15cx100 -D36 -H8 -M0,png \
+    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Zs
 
 
 #	*******************************************************

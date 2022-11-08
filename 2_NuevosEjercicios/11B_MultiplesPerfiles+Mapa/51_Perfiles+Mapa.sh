@@ -7,10 +7,10 @@ clear
 	title=51_Perfiles+Mapa
 	echo $title
 
-#	Region: Argentina
+#	Region: Sudamerica
 	REGION=-88/-18/-56.5/15
 	REGION=-88/-18/-57/15
-	REGION=-70/-40/-40/-20
+#	REGION=-70/-40/-40/-20
 
 #	Proyeccion Mercator (M)
 	PROJ=M15c
@@ -36,11 +36,10 @@ gmt begin $title png
 	gmt basemap -R$REGION -J$PROJ -B+n
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
-#	gmt grdimage $DEM -I
+	gmt grdimage $DEM -I
 
-#	gmt psscale -R -J -O -K -DJRM+o0.3c/0+w15/0.618c -C$color -Ba1+l"Elevaciones (km)"  -I >> $OUT -W0.001
 #	Agrega escala de colores. (-E triangles). Posicion (-D) (horizontal = h)
-#	gmt colorbar -DJRM+o0.4/0+w90%/0.618c -Ba+l"Elevaciones (km)" -I -W0.001
+	gmt colorbar -DJRM+o0.4/0+w90%/0.618c -Ba+l"Elevaciones (km)" -I -W0.001
 
 #	Dibujar Trench
 	gmt plot Trench.txt -W1,red
@@ -56,17 +55,14 @@ gmt begin $title png
 	-53 -56
 	END
 
-#	Extraer espaciado de las grilla
-	INC=$(gmt grdinfo $CUT -Cn -o7)
-#	echo $INC
-
-
 #	Crear Periles Perpendiculares
+#	***********************************************************
 # 	-Clongitud perfil/intervalo de datos/espaciado entre perfiles
-#	gmt grdtrack -ELB/RT+i1k+d -G$CUT -je             > tmp_data
+#	Perfiles solo en puntos originales
+#	gmt grdtrack tmp_line 	-G$CUT -C2000k/100k         > tmp_data  
 
-#	gmt grdtrack tmp_line 	-G$CUT -C2000k/1k/200k   > tmp_data
-	gmt grdtrack tmp_line 	-G$CUT -C20d/$INC/2d   > tmp_data
+#	Agregar perfiles intermedios	
+	gmt grdtrack tmp_line 	-G$CUT -C2000k/1k/200k    > tmp_data
 #	gmt grdtrack tmp_line   -G$CUT -C2000k/100k/500k  > tmp_data
 #	gmt grdtrack tmp_line   -G$CUT -C2000k/100k/1000k > tmp_data
 #	gmt grdtrack tmp_line   -G$CUT -C2000k/50k/1000k  > tmp_data
@@ -76,12 +72,19 @@ gmt begin $title png
 #	gmt grdtrack tmp_line   -G$CUT -C5000k/10k/500k   > tmp_data
 #	gmt grdtrack tmp_line   -G$CUT -C5000k/10d/200k   > tmp_data
 #	gmt grdtrack tmp_line   -G$CUT -C5000k/1k/200k    > tmp_data
-#	gmt grdtrack tmp_line   -G$CUT -C5000k/$IINC/200k g> tmp_data
 
+#	Extraer espaciado de las grilla
+	INC=$(gmt grdinfo $CUT -Cn -o7)
+#	Usar distancias en grados
+#	gmt grdtrack tmp_line 	-G$CUT -C20d/$INC        > tmp_data   
+
+#	Usar otra linea de la trinchera para hacer los perfiles
 #	gmt grdtrack Trench.txt -G$CUT -C5000k/50k/200k+v > tmp_data
-#	gmt grdtrack Trench.txt -G$CUT -C1000k/1k/100k 	  > tmp_data
+#	gmt grdtrack Trench.txt -G$CUT -C1000k/10k/100k 	  > tmp_data
 #	gmt grdtrack Trench.txt -G$CUT -C1000k/1k/200k    > tmp_data
 #	gmt grdtrack Trench.txt -G$CUT -C1000k/1k/500k    > tmp_data
+
+
 
 #	Plotear datos
 	gmt wiggle tmp_data -i0,1,4 -Gred@50+p -Gblue@50+n -Z500 -T -W -DjRB+o0.5/0.5+w100+lmGal -F+gwhite+p+s

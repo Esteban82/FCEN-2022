@@ -21,9 +21,10 @@ EOF
 cat << 'EOF' > pre.sh
 gmt begin
 # Lista de Valores: Archivo con los valores que se usaran para el script principal 
-#  	gmt math -T0/40000/250  -o1 T = tmp_z
+  	gmt math -T0/40000/250    -o1 T = tmp_z
+#	gmt math -T0/40000/240+n  -o1 T = tmp_z
+#	gmt math -T0/40000/240+n  -o1 T = tmp_z --FORMAT_FLOAT_OUT=%0.0f # SIN decimales
 #  	gmt math -T0/1000000/5000 -o1 T = tmp_z
-	gmt math -T0/6/250+n 10 T POW -o1 = tmp_z
 
 #	Recortar grilla
 	gmt grdcut $FAA -R$REGION -G$GRD
@@ -55,7 +56,7 @@ gmt begin
 	gmt coast -N1
 
 #	Curvas de nivel	
-#	gmt grdcontour $CUT -C50 -Wblack,- -A100 -GLZ-/Z+
+	gmt grdcontour $CUT -C50 -Wblack,- -A100 -GLZ-/Z+
 
 #	Mapa base
 	gmt basemap -Byf -Bxf -BWsNe
@@ -63,11 +64,7 @@ gmt begin
 #	Escala
 	gmt basemap -Ln0.15/0.075+c+w800k+f+l
 
-	echo $MOVIE_COL0 m | gmt text -F+cTR+jTR+f18p -Dj0.1i -Gwhite -W0.25p
-#	printf "%s -2.6\n%s 2.8\n" ${MOVIE_COL0} ${MOVIE_COL0} | gmt plot -W0.5p
-gmt movie main.sh -Sbpre.sh -N$title -Tz -C15cx15cx100 -D36 -H8 -M0,png \
-    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Zs
-
+	echo $MOVIE_COL0 m | gmt text -F+cTR+jTR+f18p -Dj0.1i -Gwhite -W0.25p --FORMAT_FLOAT_OUT=%0.0f
 
 #	*******************************************************
 	DOMINIO=2/7000/1e-14/1e3

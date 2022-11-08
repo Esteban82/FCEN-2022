@@ -18,7 +18,7 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
 gmt begin $title png
-	gmt subplot begin 2x3 -M0.5c -Fs8c/0 -R-0.2/6.6/-0.2/6.6 -Jx1c -Scb -Srl+t -Bwesn -T"Grlllar datos"
+	gmt subplot begin 2x3 -M0.5c -Fs8c/0 -R-0.2/6.6/-0.2/6.6 -Jx1c -Scb -Srl+t -Bwesn -T"Grlllar datos" -A+JTL+o0.5c
 		gmt plot @Table_5_11.txt -Sc0.12c -Gblack -B+t"Datos originales" -c
 		gmt text @Table_5_11.txt -D3p/0 -F+f6p+jLM -N
 		#

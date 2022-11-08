@@ -14,7 +14,6 @@ clear
 #	Region: Cuyo
 	REGION=-80/-53/-40/-20
 #	REGION=-74/-64/-36/-28
-#	REGION=-74/-64/-36/-28
 #	REGION=-69/-68/-34/-33
 
 #	Resolucion de la grilla de densidades (heatmap)
@@ -76,6 +75,7 @@ gmt begin $title png
 	
 #	Ancho de 6 minuntos de arco (6/60=0.1u, ca. 10 km)
 	gmt plot3d -p $OUT -So0.1u -C -i0:2,2 -t50
+#	gmt plot3d -p $OUT -So0.1u -C -i0:2,2 -t0	
 
 #	------------------------------------------------
 #	Dibujar escala vertical
@@ -86,7 +86,7 @@ gmt begin $title png
 gmt end
 
 #	Borrar archivos temporales
-# 	rm gmt.*
+ 	rm gmt.* tmp_
 
 # Ejercicios sugeridos
 # 1. Cambiar el % de la escala de color.

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 #	Titulo de la animación
 title=Zoom_Relief
 
@@ -22,5 +21,5 @@ gmt begin
 	echo $lon $lat | gmt plot -SE-10 -Gred@50
 gmt end
 EOF
-gmt movie main.sh -Sbpre.sh -N$title -Tz -C15cx15cx100 -D36 -H8 -M0,png \
-    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Zs -Gblack #-Fmp4
+gmt movie main.sh -Sbpre.sh -N$title -Tz -C15cx15cx100 -D36 -H8 -M3,png \
+    -Lc0+gwhite+f12p+t"Altitude = %6.1lf km" -V -Zs -Gblack #-Fmp4 -x2

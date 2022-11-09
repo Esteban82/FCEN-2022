@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 clear
 
+# Proxy de la FCEN (direccion de proxy:numero de puerto).
+# Descomentar si se esta en FCEN
+export http_proxy="http://proxy.fcen.uba.ar:8080"
+
 #	Titulo de la animación
 title=Upward_FAA
-Z=400
+Z=800
 REGION=-78/-18/-60/-20
-PROJ=M20c
+PROJ=M15c
 FAA=@earth_faa_01m_p
 DEM=tmp_faa.nc
 CUT=tmp_faa_U.nc
@@ -18,7 +22,7 @@ gmt begin $title png
 	gmt grdcut @earth_faa_02m_p -R$REGION -G$DEM
 
 #	Upward Continuation
-	gmt grdfft $DEM -C800 -G$CUT
+	gmt grdfft $DEM -C$Z -G$CUT
 
 	gmt grd2cpt $DEM -Z
 
@@ -56,7 +60,7 @@ gmt begin $title png
  	gmt plot tmp_fft_y.txt -W0.5p,red	-lY
  	gmt plot tmp_fft_r.txt -W0.5p,green -lR
 
- 	gmt legend -DjBL+o0.3c/0.3c -F+p1p+glightgray+s
+ #	gmt legend -DjBL+o0.3c/0.3c -F+p1p+glightgray+s
 gmt end
 
 #	Borrar Temporales

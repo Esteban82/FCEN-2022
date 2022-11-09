@@ -36,7 +36,7 @@ gmt begin $title png
 	gmt basemap -R$REGION -J$PROJ -B+n
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
-	gmt grdimage $DEM -I
+#	gmt grdimage $DEM -I
 
 #	Agrega escala de colores. (-E triangles). Posicion (-D) (horizontal = h)
 	gmt colorbar -DJRM+o0.4/0+w90%/0.618c -Ba+l"Elevaciones (km)" -I -W0.001
@@ -74,17 +74,15 @@ gmt begin $title png
 #	gmt grdtrack tmp_line   -G$CUT -C5000k/1k/200k    > tmp_data
 
 #	Extraer espaciado de las grilla
-	INC=$(gmt grdinfo $CUT -Cn -o7)
+#	INC=$(gmt grdinfo $CUT -Cn -o7)
 #	Usar distancias en grados
-#	gmt grdtrack tmp_line 	-G$CUT -C20d/$INC        > tmp_data   
+#	gmt grdtrack tmp_line 	-G$CUT -C20d/$INC/2d      > tmp_data   
 
 #	Usar otra linea de la trinchera para hacer los perfiles
-#	gmt grdtrack Trench.txt -G$CUT -C5000k/50k/200k+v > tmp_data
+	gmt grdtrack Trench.txt -G$CUT -C5000k/50k/200k+v > tmp_data
 #	gmt grdtrack Trench.txt -G$CUT -C1000k/10k/100k 	  > tmp_data
 #	gmt grdtrack Trench.txt -G$CUT -C1000k/1k/200k    > tmp_data
 #	gmt grdtrack Trench.txt -G$CUT -C1000k/1k/500k    > tmp_data
-
-
 
 #	Plotear datos
 	gmt wiggle tmp_data -i0,1,4 -Gred@50+p -Gblue@50+n -Z500 -T -W -DjRB+o0.5/0.5+w100+lmGal -F+gwhite+p+s

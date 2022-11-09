@@ -54,4 +54,6 @@ gmt begin lines png
 	echo 10 10 >> t.dat
 	gmt plot t.dat --PS_LINE_CAP=round -W3,green,0_20:10
 
-gmt end show
+gmt end #show
+
+rm t.dat

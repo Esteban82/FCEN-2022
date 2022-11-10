@@ -35,7 +35,7 @@ gmt begin symbols png
 	echo 3 5 | gmt plot -Skgeo-lineation_vert/3c -Gred
 
 	# Con 1 parametro (linemiento horizontal de azimuth 45º)
-	echo 4 5 45 | gmt plot -Skgeo-lineation_hor/2c -Gblack
+	echo 4 5 85 | gmt plot -Skgeo-lineation_hor/2c -Gblack
 
 	# Con 2 parametros (azimut 45º e inclinacion 30º)
 	echo 5 5 45 30| gmt plot -Skgeo-foliation-2/2c -Gblack

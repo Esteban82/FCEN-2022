@@ -22,16 +22,16 @@ file2=../0_sed/query.csv
 
 # 2. Imprimir solo algunas columnas
 # A. Imprimir columan 1 ($1)
-#awk '{print $1}' $file1
+#awk '{print $4}' $file1
 
 # B. Columna Final ($NF)
-#awk '{print $NF}' $file1 
+#awk '{print $NF}' $file1
 
 # C. Columna 2 y final (separadas en columnas)
-#awk '{print $2,$NF}' $file1 
+#awk '{print $2,$NF}' $file1 | head
 
 # C. Columna 2 y final (juntos en una misma columna)
-#awk '{print $2$NF}' $file1 
+#awk '{print $2$NF}' $file1
 
 # D. Agregar el Numero de Registro ()
 #awk '{print NR, $2}' $file1 
@@ -66,7 +66,7 @@ file2=../0_sed/query.csv
 #awk -F"," '$4>300 {print $4}' $file2 | sed '1d'
 
 # ... y luego usar sort para ordenar
-#awk -F"," '$4>300 {print $4}' $file2 | sed '1d' | sort
+awk -F"," '$4>300 {print $4}' $file2 | sed '1d' | sort
 
 # Fuente 
 # https://sio2sio2.github.io/doc-linux/03.scripts/06.misc/04.awk.html

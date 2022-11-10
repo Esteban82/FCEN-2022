@@ -10,9 +10,8 @@ file=test3.txt
 #   yyyy-mm-ddThh:mm:ss.ms
 #   yyyy-jjjThh:mm:ss.ms
 
-
  # Extraer Long Lat Fecha Record
-awk '{if (NR>2) {print $11,$12,$1,$3"-"$4"T"$5":"$6":"$7}}' $file | gmt info # > tmp_NAV.txt  
+awk '{if (NR>2) {print $11,$12,$1,$3"-"$4"T"$5":"$6":"$7"."$8}}' $file #| gmt info --FORMAT_DATE_IN=yyyy-jjj
 
 
 # Mas info

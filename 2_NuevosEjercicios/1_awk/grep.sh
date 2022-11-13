@@ -2,6 +2,11 @@
 
 # Globally Search For Regular Expression and Print out 
 # (Búsqueda global de expresiones regulares
+
+# Sintaxis
+# grep '<texto-buscado>' <archivo/archivos>
+
+
 # Archivo de prueba
 # ---------------------------------------------
 # Archivo txt (campos separado espacios)

@@ -12,6 +12,7 @@ file2=../0_sed/query.csv
 # ---------------------------------------------
 
 # 1. GMT: Opcion -e
+# SOLO analiza registros. No tiene en cuenta encabezados de archivos y segmetnos. 
 # A. Leer archivo entero 
 gmt info $file2 -h1
 
@@ -28,6 +29,7 @@ gmt info $file2 -h1 -e~Scotia
 
 # 3. GREP
 # Globally Search For Regular Expression and Print out 
+# Analiza el archivo completo (incluyendo encabezados)
 # (Búsqueda global de expresiones regulares
 
 # Sintaxis
@@ -35,8 +37,7 @@ gmt info $file2 -h1 -e~Scotia
 
 
 # A. Que el registro contenga el texto> Islands
-grep Scotia $file2 | gmt info tmp
-
+grep Scotia $file2 | gmt info
 
 # ... y luego usar sort para ordenar
 #awk -F"," '$4>300 {print $4}' $file2 | sed '1d' | sort

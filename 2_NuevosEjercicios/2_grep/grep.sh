@@ -37,17 +37,19 @@ gmt info $file -h1 -e~Scotia
 grep Scotia $file | gmt info
 
 # B. Inversa (-v, --invert-match)
-grep Scotia $file -v | gmt info
+grep Scotia $file -v | gmt info -h1
 
 # C. -c (--count): Imprimir el número de líneas de coincidencias 
-grep "Tierra del Fuego" $file -c #| gmt info
+grep "Tierra del Fuego" $file -c #| gmt info -h1
 
 # D. -A (--after-context): - imprimir las líneas después del patrón coincidente
+grep "Tierra del Fuego" $file -A 3 
 
 # E. -B (--before-context) - imprimir las líneas antes del patrón coincidente
+grep "Tierra del Fuego" $file -B 2
 
 # F. -C (--context): es igual a -A + -B.
-
+grep "Tierra del Fuego" $file -C 1
 # Expresiones regulares para patrones
 # F. ^<texto-buscado> - Inicio de línea
 

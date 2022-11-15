@@ -1,7 +1,9 @@
 
 # Funciona
 #coast -Rd -W0.5 -Bg -J”+proj=bertin1953+R=1.0000000+width=10c” -png
-gmt coast -W -Rd -J"+proj=longlat +ellps=WGS84 +datum=WGS84+no_defs" -png mapa
+#gmt coast -W -Rd -J"+proj=longlat +ellps=WGS84 +datum=WGS84+no_defs" -png mapa
+gmt coast -W -Rd -JX15c -png mapaX
+
 
 
 #Cannot find coordinate operations from `GEOGCRS["unknown",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ID["EPSG",6326]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8901]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["degree",0.0174532925199433,ID["EPSG",9122]]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["degree",0.0174532925199433,ID["EPSG",9122]]]]' to `+proj=bertin1953 +R=1 +units=m +no_defs +type=crs'

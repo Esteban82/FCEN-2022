@@ -3,7 +3,7 @@
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=MarsTopo
+	title=Mars-elipsoide
 	echo $title
 
 #	Region: 
@@ -18,6 +18,13 @@
 #	Tabla de Armonicos Esfericos
 	SPH=MarsTopo720.shape
 #	SPH=MarsTopo2600.shape		# A descargar. Ver abajo
+
+# 	Radios de Marte. https://spatialreference.org/ref/iau2000/49964/
+	A=339619
+	B=3376200
+
+#	Resolucion de las grillas
+	RES=0.5
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
@@ -39,49 +46,49 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	Calcular grillas a partir de los armonicos esfericos
-#	Cambiar resolucion de la grilla
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I1     -F1/1/710/720
-	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.5   -F1/1/720/720
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.25  -F1/1/710/720
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.125 -F1/1/710/720
+#	Procesar datos
+#	**********************************************************************
+#	1. Calcular grillas a partir de los armonicos esfericos
+	#gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I$RES
+	#gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I$RES  -F0/0/720/720 #-E
 
-#	Cambiar rango de armonicos esfericos utlizados
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.125 -F1/1/85/90
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.125 -F1/1/180/180
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.125 -F1/1/350/360
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.25  -F0/0/710/720
+#	2. Calcular elipsoside de Marte:
+	gmt grdmath -R$REGION -I$RES $A $B ELLIPSOID = E.nc
 
-#	Usar con MarsTopo2600.shape 
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I01m   -F1/1/1410/1420
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I01m   -F1/1/2600/2600
+#	3. Restar las grillas
+	gmt grdmath E.nc $CUT SUB = Topo.nc
+	#gmt grdmath $CUT my.grd SUB = Topo.nc
 
+#	***********************************************************************
 #	Extraer informacion
-#	gmt grdinfo $CUT
+	gmt grdinfo -Cn $CUT
+	gmt grdinfo -Cn E.nc
+	#gmt grdinfo -Cn my.grd
+	gmt grdinfo -Cn Topo.nc
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
-#	Crear CPT. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
-	#gmt makecpt -T-8000/12000 -D
-
 #	Crear Imagen a partir de grilla con  paleta de colores y sombreado
-	gmt grdimage $CUT -I #-CMars.cpt
+	gmt grdimage Topo.nc -Crainbow -B+tAlturas # -I #-CMars.cpt
+	gmt colorbar -C -Baf+l"Alturas (m)" -I -DJRM+o0.3/0c+w80% -W0.001
+	gmt grdimage my.grd -I  -Crainbow -B+tElipsoide -Y10c #-I #-CMars.cpt 
+	gmt colorbar -C -Baf+l"Distancia al centro (km)" -I -DJRM+o0.3/0c+w80% -W0.001
 
+	#gmt grdimage E.nc -Yh #-I #-CMars.cpt 
+	gmt grdimage $CUT -I  -Y10c -Crainbow -B+tArmonicos #-I #-CMars.cpt
+	
+	#gmt grdimage $CUT -I #-CMars.cpt
+	
 #	Agrega escala de colores. (-E triangles). Posici�n (-D) (horizontal = h). Posici�n (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
-	gmt colorbar -C -Baf+l"Alturas (km)" -I -DJCB+o0/0.3c+w80%+h -W0.001
+	gmt colorbar -C -Baf+l"Distancia al centro (km)" -I -DJRM+o0.3/0c+w80% -W0.001 #-DJCB+o0/0.3c+w80%+h
 
 #	Dibujar frame
 #	gmt basemap -B0
 	gmt basemap -Baf
 
 #	-----------------------------------------------------------------------------------------------------------
-#	Cerrar figurael archivo de salida (ps)
+#	Cerrar figura
 gmt end
 
 #	Borrar temporales
 #	rm tmp_* gmt.*
-
-# Fuente:
-# Link para version original con 2600 coeficientes
-# https://zenodo.org/record/3870922
-# https://zenodo.org/record/3870922/files/MarsTopo2600.shape.gz?download=1

@@ -41,8 +41,8 @@ gmt begin $title png
 
 #	Calcular grillas a partir de los armonicos esfericos
 #	Cambiar resolucion de la grilla
-	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I1     -F1/1/710/720
-#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.5   -F1/1/710/720
+#	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I1     -F1/1/710/720
+	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.5   -F1/1/720/720
 #	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.25  -F1/1/710/720
 #	gmt sph2grd -R$REGION $SPH -G$CUT -Ng -V -I0.125 -F1/1/710/720
 
@@ -62,10 +62,10 @@ gmt begin $title png
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Crear CPT. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
-	gmt makecpt -T-8000/12000 -D
+	#gmt makecpt -T-8000/12000 -D
 
 #	Crear Imagen a partir de grilla con  paleta de colores y sombreado
-	gmt grdimage $CUT -I -C
+	gmt grdimage $CUT -I #-CMars.cpt
 
 #	Agrega escala de colores. (-E triangles). Posici�n (-D) (horizontal = h). Posici�n (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -C -Baf+l"Alturas (km)" -I -DJCB+o0/0.3c+w80%+h -W0.001

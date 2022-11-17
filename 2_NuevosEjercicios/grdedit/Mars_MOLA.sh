@@ -22,7 +22,7 @@
 
 #	Procesar Grilla original
 #	-----------------------------------------------------------------------------------------------------------
-#	Calcular grillas a partir de los armonicos esfericos
+#	Convertir la grilla de a Long Lat
 #	gmt grdedit $GRD -G$CUT -Rd
 
 #	Ver informacion

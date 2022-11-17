@@ -10,6 +10,8 @@
 #	REGION=d
 	REGION=322/325/-37/-34		# Crater de Hale
 	REGION=-80/-8/-60/-30		# Argyre Basin
+    REGION=341/343/-2/0			# Iani Chaos
+
 
 #	Proyeccion Mercator (M)
 #	PROJ=W15c

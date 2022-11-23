@@ -17,6 +17,8 @@ Necesitarás tres programas (fundamentales):
 
 * GMT para Windows: version gmt-6.4.0-win64.exe en https://www.generic-mapping-tools.org/download/. Incluye los *softwares* GDAL, ghostscript y ffmpeg. 
 
+* GraphicsMagick: Ver última versión en [link oficial]([url](https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/1.3.36/GraphicsMagick-1.3.36-Q8-win64-dll.exe/download)). Si la aparece un error al ejecutarlo, probar con la versión 1.3.35.
+
 * Editor de texto: ver instrucciones mas abajo.
 
 En [este video](https://www.youtube.com/watch?v=1bPMIN7noTI&feature=youtu.be) se muestra como instalarlos y comprobar su correcto funcionamiento. 

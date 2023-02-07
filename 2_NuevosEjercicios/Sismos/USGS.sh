@@ -39,3 +39,6 @@ URL="https://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/jan76_dec20.ndk"
 gmt which $URL -G
 gawk '/^PDE/ {Date=$2; Time=$3; Lat=$4; Long=$5; Depth=$6; getline; Name=$1; getline; getline; Exp=$1; getline; mant=$11; strike1=$12; dip1=$13; rake1=$14; strike2=$15; dip2=$16; rake2=$17; print Long, Lat, Depth, strike1, dip1, rake1, strike2, dip2, rake2, mant, Exp, Date "T" Time, Name}' jan76_dec20.ndk | sed 's/\//-/g' > meca.gmt
  gmt select meca.gmt -R$REGION > GCMT_1976-2020_meca.gmt
+
+# Infomation en la terminal. Ver como extraerlo
+#coast [INFORMATION]: Region implied by DCW polygons is -31.2688/28.2464/27.6388/60.8458

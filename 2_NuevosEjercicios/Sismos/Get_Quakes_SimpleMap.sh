@@ -26,10 +26,6 @@ SITE="https://earthquake.usgs.gov/fdsnws/event/1/query.csv"
 TIME="starttime=$Start%2000:00:00&endtime=$End%2000:00:00"
 ORDER="orderby=time-asc"
 
-gmt begin sismos png
-
-# Dibujar frame 
-    gmt basemap -R$REGION -Baf -JW15c
 
 #   Obterner region geografica
     REGION=$(gmt mapproject -WR)
@@ -55,6 +51,11 @@ curl -s $URL > query.csv  # Funciona si se excede el maximo de datos
 #gmt info query.csv -h1 -i2,1,4,0
 
 
+gmt begin sismos png
+
+# Dibujar frame 
+    gmt basemap -R$REGION -Baf -JW15c
+
 # Warming message if N > 20001 (only 20000 can be download, +1 due to the header)
 if (( $(wc --lines < query.csv) > 20001 )); then
     grep "Error" query.csv -A2
@@ -65,13 +66,6 @@ if (( $(wc --lines < query.csv) > 20001 )); then
 
 
 # Mapa
-gmt plot query.csv -Sc0.3c -W0.1 -Gred -fg -h -i2,1
+    gmt plot query.csv -Sc0.3c -W0.1 -Gred -fg -h -i2,1
 
-gmt end 
-
-#rm query.csv
-# 2. Descargar Mecanismos focales y reformatearlos
-#URL="https://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/jan76_dec20.ndk"
-#gmt which $URL -G
-#gawk '/^PDE/ {Date=$2; Time=$3; Lat=$4; Long=$5; Depth=$6; getline; Name=$1; getline; getline; Exp=$1; getline; mant=$11; strike1=$12; dip1=$13; rake1=$14; strike2=$15; dip2=$16; rake2=$17; print Long, Lat, Depth, strike1, dip1, rake1, strike2, dip2, rake2, mant, Exp, Date "T" Time, Name}' jan76_dec20.ndk | sed 's/\//-/g' > meca.gmt
-# gmt select meca.gmt -R-75.1/-63/-34.44/-30.35 > GCMT_1976-2017_meca.gmt
+gmt end

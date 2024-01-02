@@ -21,7 +21,7 @@ file2=../0_sed/query.csv
 # cat $file1
 
 # 2. Imprimir solo algunas columnas
-# A. Imprimir columan 1 ($1)
+# A. Imprimir columna 1 ($1)
 #awk '{print $4}' $file1
 
 # B. Columna Final ($NF)

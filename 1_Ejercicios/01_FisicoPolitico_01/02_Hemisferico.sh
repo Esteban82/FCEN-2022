@@ -10,6 +10,7 @@
 #	L(a)mbert Equal Area; (S)tereographic; Orto(g)rafica; (E)quidistante
 	PROJ=S-65/-30/90/15c
 	PROJ=G-65/-30/90/15c
+	#PROJ=G-65/-90/90/15c  # Centrado en polo sur
 
 #	Region geografica del mapa (W/E/S/N) d=-180/180/-90/90 g=0/360/-90/90
 	REGION=d
